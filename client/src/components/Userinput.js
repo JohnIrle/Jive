@@ -87,7 +87,7 @@ class UserInput extends React.Component {
 UserInput.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object
 };
 
 const mapStateToProps = state => ({

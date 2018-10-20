@@ -105,11 +105,6 @@
         color: #FFF;
         text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
         animation: fade-in 0.3s ease; }
-      .App .form-header h2 {
-        font-size: 5rem;
-        color: #FFF;
-        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
-        animation: fade-in 0.3s ease; }
   .App #simple-form {
     box-sizing: border-box;
     margin: 0 auto;
@@ -142,6 +137,43 @@
       bottom: 0%;
       clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%); }
 
+.tomorrowform {
+  width: 100%;
+  max-width: 50rem;
+  height: 70vh;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: block;
+  background: #F5BB00; }
+  .tomorrowform h2 {
+    font-size: 4.5rem;
+    margin-top: 1rem;
+    color: #FFF;
+    text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+    animation: fade-in 0.3s ease;
+    text-align: center; }
+  .tomorrowform-data {
+    width: 90%;
+    left: 5%;
+    position: relative;
+    height: 60vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none; }
+    .tomorrowform-data li {
+      background: #FFF;
+      width: 100%;
+      height: 9vh;
+      display: block; }
+      .tomorrowform-data li .refresh {
+        width: 9rem;
+        height: 100%;
+        background: radial-gradient(#60BF0C, #55a80a);
+        float: right; }
+
 .navbar {
   position: absolute;
   top: 0%;
@@ -155,11 +187,16 @@
     max-width: 100rem;
     margin-top: 1.2rem; }
     .navbar-menu a {
-      font-size: 1.5rem;
+      font-size: 2rem;
       text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
       margin-left: 2rem; }
       .navbar-menu a:active {
         color: inherit; }
+    .navbar-menu svg {
+      color: #FFF;
+      font-size: 4rem;
+      float: left;
+      margin-top: -0.7rem; }
     .navbar-menu .float {
       float: right;
       margin-right: 2rem; }
@@ -174,8 +211,12 @@
   z-index: 10; }
   .footer-settings {
     height: 5rem;
-    width: 5rem;
-    background: #000; }
+    width: 5rem; }
+    .footer-settings svg {
+      font-size: 4rem;
+      color: #FFF;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem; }
     .footer-settings-panel {
       position: absolute;
       bottom: 5rem;
@@ -183,7 +224,7 @@
       height: 35rem;
       background: #f2f2f2;
       color: #7D8387; }
-      .footer-settings-panel div.panel-group {
+      .footer-settings-panel .panel-group {
         margin-top: 2rem;
         margin-left: 2.5rem; }
       .footer-settings-panel div.button-group {
