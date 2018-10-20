@@ -1,0 +1,19 @@
+.landing {
+  height: 100vh;
+  width: 100%;
+  background-color: $white;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-header {
+
+    &-img {
+      max-width: 50rem;
+      width: 100%;
+      height: 100%;
+      animation: fall-down 0.4s;
+    }
+  }
+}
