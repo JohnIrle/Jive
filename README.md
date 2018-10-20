@@ -6,35 +6,26 @@ Jive is a web based application that randomly generates activites or ideas to do
 
 Jive is a web-based application so the user simply goes to our website and registers. The user can choose to create an account or sign in via Facebook or Google. 
 
-### Prerequisites
+### Languages
+HTML, CSS, JS, 
 
-Updated web browser.
+## Built With
 
-```
-Chrome
-Firefox
-Edge
-etc.
-```
-
-### Installing
-
-There is no installation needed.
-
-
-### And coding style tests
-
-Programming languages used are HTML, CSS, JS, 
-
-```
-React, Redux, Express, MongoDB, PassportJS, Mongoose, BeCrypt, Validator.
-
-```
-
+* [React](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Redux](https://maven.apache.org/) - Dependency Management
+* [Express](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [MongoDB](https://rometools.github.io/rome/) -
+* [PassportJS](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Mongoose](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Bcrypt](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Validator](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Authors
-
-* **John Irle, Brent Greene, Jason Young, Daniel Clayton, Nick Stamos** - *Initial work* - [Mules 3](https://github.com/Fed-code-a-thon-team-3)
+* **John Irle** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Brent Greene** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Jason Young** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Daniel Clayton** - [PurpleBooth](https://github.com/PurpleBooth)
+* **Nick Stamos** - [PurpleBooth](https://github.com/PurpleBooth)
 
 
 
