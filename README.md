@@ -11,14 +11,14 @@ HTML, CSS, JS,
 
 ## Built With
 
-* [React](http://www.dropwizard.io/1.0.2/docs/)
-* [Redux](https://maven.apache.org/)
-* [Express](https://rometools.github.io/rome/)
-* [MongoDB](https://rometools.github.io/rome/) 
-* [PassportJS](https://rometools.github.io/rome/)
-* [Mongoose](https://rometools.github.io/rome/)
-* [Bcrypt](https://rometools.github.io/rome/)
-* [Validator](https://rometools.github.io/rome/)
+* [React](https://github.com/reactjs/reactjs.org)
+* [Redux](https://github.com/reduxjs/redux)
+* [Express](https://github.com/expressjs/express)
+* [MongoDB](https://github.com/mongodb/mongo) 
+* [PassportJS](https://github.com/passport)
+* [Mongoose](https://github.com/Automattic/mongoose)
+* [Bcrypt](https://github.com/kelektiv/node.bcrypt.js/)
+* [Validator](https://github.com/chriso/validator.js/)
 
 ## Authors
 * **John Irle** - [JohnIrle](https://github.com/JohnIrle)
