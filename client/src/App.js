@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
+const store = createStore(() => [], {}, applyMiddleware());
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store = { store }>
+        <Router>
+          <div className="App">
+           <NavBar />
+            <Route exact path="/" component={ Login } />
+            <Route exact path="/register" component={ Register } />
+            <Footer />
+          </div>
+        </Router>
+      </Provider>
+
     );
   }
 }

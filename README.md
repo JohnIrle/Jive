@@ -1,4 +1,5 @@
-# application
+
+# JIVE
 
 We all know how busy life can get. And so when you FINALLY get a day all to yourself you probably are not too sure on how to spend it. We here at 'Mules Team 3 LLC' found this happening all too often so we developed Jive! Jive is a fun new way to plan a day, without even thinking! Simply click register and you can start Jiving. Also, users have the option to log in with with their Facebook or Google account.
 
@@ -11,3 +12,6 @@ Since Jive knows that the user will not always like the first option given, a us
 Another key feature to Jive is expierence. Jive uses a series of API's to maximize the user's enjoyment. By allowing the user to login to Facebook or Google the user is saved from making another pesky account. Another key API we use is Yelp. That way the user is statstically more likely to get venues and activites that are liked more by the community. 
 
 Jive is a web-based application written in HTML, CSS, JS, along with React, Redux, Express, MongoDB, PassportJS, Mongoose, BeCrypt, Validator. 
+
+
+

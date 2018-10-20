@@ -1,0 +1,19 @@
+.btn {
+  width: 10rem;
+  height: 3rem;
+
+  &-form {
+    @include centerAbs;
+    border: none;
+    border-radius: 5%;
+    color: #FFF;
+    background: linear-gradient($primary-lime, darken($primary-lime, 25%));
+    box-shadow: 2px 2px 0.5rem rgba(0,0,0,0.3);
+    margin: 1rem 0rem;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translate(-50%, -0.5rem);
+    }
+  }
+}
