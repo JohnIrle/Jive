@@ -33,10 +33,10 @@ export default class LoginInput extends React.Component {
     return (
       <div>
         <form id="simple-form" onSubmit={this.onSubmit}>
-          <label htmlFor="email-field">Email:</label>
-          <input type="email" name="email" id="email-field" onChange={this.onChange} />
-          <label htmlFor="password-field">Password:</label>
-          <input type="password" name="password" id="password-field" onChange={this.onChange} />
+          <label htmlFor="login-email-field">Email:</label>
+          <input type="email" name="email" id="login-email-field" onChange={this.onChange} />
+          <label htmlFor="login-password-field">Password:</label>
+          <input type="password" name="password" id="login-password-field" onChange={this.onChange} />
           <button className="btn btn-form" type="submit">Submit</button>
         </form>
       </div>
