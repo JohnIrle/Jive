@@ -1,3 +1,17 @@
+@keyframes bckgrnd-slide {
+  50% {
+    background-position: right center; }
+  100% {
+    background-position: left center; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem); } }
+
 .btn {
   width: 10rem;
   height: 3rem; }
@@ -8,7 +22,7 @@
     border: none;
     border-radius: 5%;
     color: #FFF;
-    background: linear-gradient(#89FF1F, #4b9f00);
+    background: linear-gradient(#60BF0C, #244704);
     box-shadow: 2px 2px 0.5rem rgba(0, 0, 0, 0.3);
     margin: 1rem 0rem;
     transition: all 0.3s; }
@@ -22,17 +36,31 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background-image: url("./assets/architecture.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  animation: bckgrnd-slide 120s ease-in infinite; }
+  .App:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #FFF, #FFF);
+    opacity: 0.6; }
   .App .form {
     width: 100%;
     max-width: 50rem;
     height: 70rem;
     box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
-    position: relative; }
+    position: relative;
+    background: #FFF; }
     .App .form-header {
       width: 100%;
       height: 13rem;
-      background-color: #89FF1F;
+      background-color: #60BF0C;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,7 +68,13 @@
       .App .form-header h1 {
         font-size: 7rem;
         color: #FFF;
-        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3); }
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        animation: fade-in 0.3s ease; }
+      .App .form-header h2 {
+        font-size: 5rem;
+        color: #FFF;
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        animation: fade-in 0.3s ease; }
   .App #simple-form {
     box-sizing: border-box;
     margin: 0 auto;
@@ -68,7 +102,7 @@
       content: '';
       width: 100%;
       height: 13rem;
-      background-color: #89FF1F;
+      background-color: #60BF0C;
       left: 0%;
       bottom: 0%;
       clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%); }
@@ -78,14 +112,64 @@
   top: 0%;
   width: 100%;
   height: 5rem;
-  background-color: #000; }
+  background: linear-gradient(10deg, #1d3a04, #60BF0C);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 10; }
+  .navbar-menu {
+    margin: 0 auto;
+    max-width: 100rem;
+    margin-top: 1.2rem; }
+    .navbar-menu a {
+      font-size: 1.5rem;
+      text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+      margin-left: 2rem; }
+      .navbar-menu a:active {
+        color: inherit; }
+    .navbar-menu .float {
+      float: right;
+      margin-right: 2rem; }
 
 .footer {
   position: absolute;
   bottom: 0%;
   width: 100%;
   height: 5rem;
-  background-color: #000; }
+  background: linear-gradient(10deg, #1d3a04, #60BF0C);
+  box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 10; }
+
+.home {
+  height: 100vh;
+  width: 100%;
+  background-color: #FFF;
+  z-index: 2;
+  display: flex;
+  justify-content: center; }
+  .home-form {
+    width: 50rem;
+    height: 50rem;
+    margin-top: 15rem;
+    position: relative;
+    filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3)); }
+    .home-form-header {
+      width: 100%;
+      height: 10rem;
+      background-color: #5AB20B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%); }
+    .home-form .option {
+      position: absolute;
+      margin: 4rem 0rem;
+      padding: 2rem 3rem;
+      background-color: #242A33; }
+      .home-form .option-1 {
+        left: 3rem; }
+      .home-form .option-2 {
+        right: 3rem; }
+  .home a {
+    color: #60BF0C; }
 
 *,
 *::before,
@@ -93,6 +177,12 @@
   margin: 0px;
   padding: 0px;
   box-sizing: inherit; }
+
+a {
+  color: #FFF;
+  text-decoration: none; }
+  a:active {
+    color: inherit; }
 
 html {
   font-size: 62.5%;

@@ -6,12 +6,14 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="navbar">
-        <Link to="/">
-          Login
-        </Link>
-        <Link to="/register">
-          Register
-        </Link>
+        <div className="navbar-menu">
+          <Link to="/">
+            Login
+          </Link>
+          <Link className="float" to="/register">
+            Register
+          </Link>
+        </div>
       </div>
     );
   }

@@ -5,15 +5,15 @@ export default class LoginInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      email: "",
+      password: ""
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   onSubmit(e) {
@@ -21,12 +21,13 @@ export default class LoginInput extends React.Component {
 
     const logUser = {
       email: this.state.email,
-      password: this.state.password,
+      password: this.state.password
     };
 
-    axios.post("/api/users/login", logUser)
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err.response.data));
+    axios
+      .post("/api/users/login", logUser)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.response.data));
   }
 
   render() {
@@ -34,10 +35,22 @@ export default class LoginInput extends React.Component {
       <div>
         <form id="simple-form" onSubmit={this.onSubmit}>
           <label htmlFor="login-email-field">Email:</label>
-          <input type="email" name="email" id="login-email-field" onChange={this.onChange} />
+          <input
+            type="email"
+            name="email"
+            id="login-email-field"
+            onChange={this.onChange}
+          />
           <label htmlFor="login-password-field">Password:</label>
-          <input type="password" name="password" id="login-password-field" onChange={this.onChange} />
-          <button className="btn btn-form" type="submit">Submit</button>
+          <input
+            type="password"
+            name="password"
+            id="login-password-field"
+            onChange={this.onChange}
+          />
+          <button className="btn btn-form" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );

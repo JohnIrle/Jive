@@ -6,6 +6,21 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  background-image: url('./assets/architecture.jpg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  animation: bckgrnd-slide 120s ease-in infinite;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,$white,$white);
+    opacity: 0.6;
+  }
 
   .form {
     width: 100%;
@@ -13,6 +28,7 @@
     height: 70rem;
     box-shadow: 0.5rem 0.5rem 2rem rgba($black, 0.3);
     position: relative;
+    background: #FFF;
 
     &-header {
       width: 100%;
@@ -22,10 +38,19 @@
       justify-content: center;
       align-items: center;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 77%);
+
       h1 {
         font-size: 7rem;
         color: $white;
         text-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.3);
+        animation: fade-in 0.3s ease;
+      }
+
+      h2 {
+        font-size: 5rem;
+        color: $white;
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.3);
+        animation: fade-in 0.3s ease;
       }
     }
   }
