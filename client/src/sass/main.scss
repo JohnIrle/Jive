@@ -1,0 +1,32 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "components/button";
+@import "components/login";
+
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what one REM is...
+    font-size: 62.5%;
+    font-family: 'Roboto Mono', monospace;
+
+    @include respond(desktop) {
+    font-size: 62.5%;
+    }
+    @include respond(tablet-bg) {
+      font-size: 56.25%;
+    }
+    @include respond(tablet) {
+      font-size: 50%;
+    }
+    @include respond(phone) {
+      font-size: 40%;
+    }
+}

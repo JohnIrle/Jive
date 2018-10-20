@@ -1,14 +1,74 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+.App {
+  background-color: #FFF;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center; }
+  .App .form {
+    width: 100%;
+    max-width: 50rem;
+    height: 70rem;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
+    position: relative; }
+    .App .form-header {
+      width: 100%;
+      height: 13rem;
+      background-color: #89FF1F;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 77%); }
+      .App .form-header h1 {
+        font-size: 7rem;
+        color: #FFF;
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3); }
+  .App #simple-form {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 40rem; }
+    .App #simple-form label {
+      font-size: 2rem;
+      font-weight: 300;
+      float: left; }
+    .App #simple-form input {
+      border: 1px solid #cccccc;
+      padding: 1rem;
+      margin: 10px 10px 15px 0;
+      font-size: 1.5rem;
+      color: #666666;
+      display: block;
+      width: 100%; }
+    .App #simple-form:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 13rem;
+      background-color: #89FF1F;
+      left: 0%;
+      bottom: 0%;
+      clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%); }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto Mono', monospace; }
+  @media only screen and (min-width: 93.75em) {
+    html {
+      font-size: 62.5%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
