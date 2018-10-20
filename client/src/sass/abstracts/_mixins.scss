@@ -1,0 +1,22 @@
+@mixin centerAbs {
+    // write the css here
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// Responsive
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content };
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 56.25em) { @content };
+  }
+  @if $breakpoint == tablet-bg {
+    @media only screen and (max-width: 75em) { @content };
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 93.75em) { @content };
+  }
+}

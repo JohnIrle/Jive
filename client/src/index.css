@@ -1,14 +1,316 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@keyframes bckgrnd-slide {
+  50% {
+    background-position: right center; }
+  100% {
+    background-position: left center; } }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem); } }
+
+@keyframes expand-in {
+  0% {
+    width: 1%;
+    height: 1%;
+    opacity: 0; }
+  100% {
+    height: 100vh;
+    width: 100%; } }
+
+@keyframes fall-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem); } }
+
+.btn {
+  width: 10rem;
+  height: 3rem; }
+  .btn:hover {
+    transform: translate(-50%, -0.5rem); }
+  .btn-form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 5%;
+    color: #FFF;
+    background: linear-gradient(#60BF0C, #244704);
+    box-shadow: 2px 2px 0.5rem rgba(0, 0, 0, 0.3);
+    margin: 1rem 0rem;
+    transition: all 0.3s; }
+  .btn-panel {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 6rem;
+    border: none;
+    border-radius: 5%;
+    color: #FFF;
+    background: linear-gradient(#FE3F03, #811f01);
+    box-shadow: 2px 2px 0.5rem rgba(0, 0, 0, 0.3);
+    margin: 1rem 0rem;
+    transition: all 0.3s; }
+
+.App {
+  background-color: #FFF;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/architecture.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  animation: bckgrnd-slide 120s ease-in infinite; }
+  .App:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #FFF, #FFF);
+    opacity: 0.6; }
+  .App .form {
+    width: 100%;
+    max-width: 50rem;
+    height: 70vh;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    background: #FFF; }
+    @media only screen and (max-width: 75em) {
+      .App .form {
+        max-width: 60rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .App .form {
+        max-width: none; } }
+    .App .form-header {
+      width: 100%;
+      height: 13rem;
+      background-color: #60BF0C;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 77%); }
+      .App .form-header h1 {
+        font-size: 7rem;
+        color: #FFF;
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        animation: fade-in 0.3s ease; }
+      .App .form-header h2 {
+        font-size: 5rem;
+        color: #FFF;
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        animation: fade-in 0.3s ease; }
+  .App #simple-form {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 40rem; }
+    .App #simple-form label {
+      font-size: 2rem;
+      font-weight: 300;
+      float: left; }
+    .App #simple-form input {
+      border: 1px solid #cccccc;
+      padding: 1rem;
+      margin: 10px 10px 15px 0;
+      font-size: 1.5rem;
+      color: #666666;
+      display: block;
+      width: 100%;
+      border-bottom: 2px solid transparent; }
+      .App #simple-form input:focus {
+        outline: none;
+        border-bottom: 2px solid #CC3404; }
+      .App #simple-form input:focus:valid {
+        border-bottom: 2px solid #385DFF; }
+    .App #simple-form:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 13rem;
+      background-color: #60BF0C;
+      left: 0%;
+      bottom: 0%;
+      clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%); }
+
+.navbar {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(10deg, #1d3a04, #60BF0C);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 10; }
+  .navbar-menu {
+    margin: 0 auto;
+    max-width: 100rem;
+    margin-top: 1.2rem; }
+    .navbar-menu a {
+      font-size: 1.5rem;
+      text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+      margin-left: 2rem; }
+      .navbar-menu a:active {
+        color: inherit; }
+    .navbar-menu .float {
+      float: right;
+      margin-right: 2rem; }
+
+.footer {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(10deg, #1d3a04, #60BF0C);
+  box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 10; }
+  .footer-settings {
+    height: 5rem;
+    width: 5rem;
+    background: #000; }
+    .footer-settings-panel {
+      position: absolute;
+      bottom: 5rem;
+      width: 30rem;
+      height: 35rem;
+      background: #f2f2f2;
+      color: #7D8387; }
+      .footer-settings-panel div.panel-group {
+        margin-top: 2rem;
+        margin-left: 2.5rem; }
+      .footer-settings-panel div.button-group {
+        height: 11rem;
+        width: 90%; }
+        .footer-settings-panel div.button-group input {
+          float: left;
+          clear: left;
+          width: 6rem;
+          height: 2rem;
+          padding-left: 0.5rem;
+          text-align: left;
+          margin: 1px 0rem;
+          color: #60BF0C; }
+        .footer-settings-panel div.button-group:after {
+          content: "";
+          clear: both;
+          display: table; }
+      .footer-settings-panel label {
+        text-align: left;
+        width: 90%;
+        font-size: 2rem;
+        margin: 2px 0px; }
+      .footer-settings-panel input {
+        width: 90%;
+        padding: 0.5rem 0rem;
+        margin-bottom: 1rem; }
+
+.home {
+  height: 100vh;
+  width: 100%;
+  background-color: #FFF;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  animation: expand-in 0.6s; }
+  .home-form {
+    width: 50rem;
+    opacity: 0;
+    height: 50rem;
+    margin-top: 30rem;
+    position: relative;
+    filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3));
+    animation: fall-down 0.6s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards; }
+    .home-form-header {
+      width: 100%;
+      height: 10rem;
+      background-color: #5AB20B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%); }
+      .home-form-header h1 {
+        color: #FFF;
+        font-size: 3.5rem;
+        text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3); }
+    .home-form .option {
+      height: 12rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap; }
+      .home-form .option-1 {
+        background: #1F3CBF;
+        padding: 1rem 3rem;
+        border-radius: 3px; }
+        .home-form .option-1 a {
+          color: #FFF;
+          font-size: 1.5rem; }
+      .home-form .option-2 {
+        background: #FE3F03;
+        padding: 1rem 3rem;
+        border-radius: 3px; }
+        .home-form .option-2 a {
+          color: #FFF;
+          font-size: 1.5rem; }
+      .home-form .option-3 {
+        background: #5C0065;
+        padding: 1rem 3rem;
+        border-radius: 3px; }
+        .home-form .option-3 a {
+          color: #FFF;
+          font-size: 1.5rem; }
+  .home a {
+    color: #60BF0C; }
+
+.landing {
+  height: 100vh;
+  width: 100%;
+  background-color: #FFF;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .landing-header-img {
+    max-width: 50rem;
+    width: 100%;
+    height: 100%;
+    animation: fall-down 0.4s; }
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; }
+
+a {
+  color: #FFF;
+  text-decoration: none; }
+  a:active {
+    color: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto Mono', monospace; }
+  @media only screen and (min-width: 93.75em) {
+    html {
+      font-size: 62.5%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }

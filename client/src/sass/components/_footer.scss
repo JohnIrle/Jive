@@ -1,0 +1,64 @@
+.footer {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(10deg, darken($primary-dark, 25%), $primary-lime);
+  box-shadow: -2px -2px 2px rgba($black,0.3);
+  z-index: 10;
+
+  &-settings {
+    height: 5rem;
+    width: 5rem;
+    background: $black;
+
+    &-panel {
+      position: absolute;
+      bottom: 5rem;
+      width: 30rem;
+      height: 35rem;
+      background: darken($white, 5%);
+      color: #7D8387;
+
+      div.panel-group {
+        margin-top: 2rem;
+        margin-left: 2.5rem;
+      }
+
+      div.button-group {
+        height: 11rem;
+        width: 90%;
+        input {
+          float: left;
+          clear: left;
+          width: 6rem;
+          height: 2rem;
+          padding-left: 0.5rem;
+          text-align:left;
+          margin: 1px 0rem;
+          color: $primary-lime;
+        }
+        label {
+        }
+        &:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+      }
+
+      label {
+        text-align: left;
+        width: 90%;
+        font-size: 2rem;
+        margin: 2px 0px;
+      }
+
+      input {
+        width: 90%;
+        padding: 0.5rem 0rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

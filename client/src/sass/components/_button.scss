@@ -1,0 +1,30 @@
+.btn {
+  width: 10rem;
+  height: 3rem;
+  &:hover {
+    transform: translate(-50%, -0.5rem);
+  }
+
+  &-form {
+    @include centerAbs;
+    border: none;
+    border-radius: 5%;
+    color: #FFF;
+    background: linear-gradient($primary-lime, darken($primary-lime, 25%));
+    box-shadow: 2px 2px 0.5rem rgba(0,0,0,0.3);
+    margin: 1rem 0rem;
+    transition: all 0.3s;
+  }
+
+  &-panel {
+    @include centerAbs;
+    bottom: 6rem;
+    border: none;
+    border-radius: 5%;
+    color: #FFF;
+    background: linear-gradient(#FE3F03, darken(#FE3F03, 25%));
+    box-shadow: 2px 2px 0.5rem rgba(0,0,0,0.3);
+    margin: 1rem 0rem;
+    transition: all 0.3s;
+  }
+}

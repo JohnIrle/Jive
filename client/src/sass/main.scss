@@ -1,0 +1,46 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/animation";
+
+@import "components/button";
+@import "components/login";
+@import "components/navbar";
+@import "components/footer";
+@import "components/homepage";
+@import "components/landing";
+
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+
+  &:active {
+    color: inherit;
+  }
+}
+
+html {
+    // This defines what one REM is...
+    font-size: 62.5%;
+    font-family: 'Roboto Mono', monospace;
+
+    @include respond(desktop) {
+    font-size: 62.5%;
+    }
+    @include respond(tablet-bg) {
+      font-size: 56.25%;
+    }
+    @include respond(tablet) {
+      font-size: 50%;
+    }
+    @include respond(phone) {
+      font-size: 40%;
+    }
+}
