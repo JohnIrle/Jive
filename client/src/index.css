@@ -1,3 +1,16 @@
+.btn {
+  width: 10rem;
+  height: 3rem; }
+  .btn-form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 5%;
+    color: #FFF;
+    background: #63d200;
+    box-shadow: 2px 2px 0.5rem rgba(0, 0, 0, 0.3); }
+
 .App {
   background-color: #FFF;
   height: 100vh;

@@ -1,7 +1,7 @@
 import React from "react";
-import UserInput from "./Userinput";
+import UserInput from "./UserInput";
 
-class Logincontainer extends React.Component {
+class RegisterUser extends React.Component {
   render() {
     return (
       <div className="form">
@@ -14,4 +14,4 @@ class Logincontainer extends React.Component {
   }
 }
 
-export default Logincontainer;
+export default RegisterUser;
