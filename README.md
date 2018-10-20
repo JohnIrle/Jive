@@ -11,21 +11,21 @@ HTML, CSS, JS,
 
 ## Built With
 
-* [React](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Redux](https://maven.apache.org/) - Dependency Management
-* [Express](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [MongoDB](https://rometools.github.io/rome/) -
-* [PassportJS](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [Mongoose](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [Bcrypt](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [Validator](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React](http://www.dropwizard.io/1.0.2/docs/)
+* [Redux](https://maven.apache.org/)
+* [Express](https://rometools.github.io/rome/)
+* [MongoDB](https://rometools.github.io/rome/) 
+* [PassportJS](https://rometools.github.io/rome/)
+* [Mongoose](https://rometools.github.io/rome/)
+* [Bcrypt](https://rometools.github.io/rome/)
+* [Validator](https://rometools.github.io/rome/)
 
 ## Authors
-* **John Irle** - [PurpleBooth](https://github.com/PurpleBooth)
-* **Brent Greene** - [PurpleBooth](https://github.com/PurpleBooth)
-* **Jason Young** - [PurpleBooth](https://github.com/PurpleBooth)
-* **Daniel Clayton** - [PurpleBooth](https://github.com/PurpleBooth)
-* **Nick Stamos** - [PurpleBooth](https://github.com/PurpleBooth)
+* **John Irle** - [JohnIrle](https://github.com/JohnIrle)
+* **Brent Greene** - [BrentGreene](https://github.com/BrentGreene)
+* **Jason Young** - [Wahlrus](https://github.com/Wahlrus)
+* **Daniel Clayton** - [Codephenomenon](https://github.com/Codephenomenon)
+* **Nick Stamos** - [ItsNicholas22](https://github.com/ItsNicholas22)
 
 
 
