@@ -17,7 +17,7 @@ class LoginInput extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/result");
+      this.props.history.push("/home");
     }
 
     if (nextProps.errors) {
