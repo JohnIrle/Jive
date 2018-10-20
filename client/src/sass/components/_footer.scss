@@ -10,7 +10,13 @@
   &-settings {
     height: 5rem;
     width: 5rem;
-    background: $black;
+
+    svg {
+      font-size: 4rem;
+      color: $white;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+    }
 
     &-panel {
       position: absolute;
@@ -20,7 +26,7 @@
       background: darken($white, 5%);
       color: #7D8387;
 
-      div.panel-group {
+      .panel-group {
         margin-top: 2rem;
         margin-left: 2.5rem;
       }

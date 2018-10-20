@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class Footer extends React.Component {
       click: false
     };
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.displayPanel = this.displayPanel.bind(this);
   }
 
@@ -20,13 +23,25 @@ class Footer extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+
+    const newPreferences = {
+      cost: this.state.cost,
+      location: this.state.location
+    };
+    console.log(newPreferences);
+  }
+
   render() {
     if(this.state.click) {
       return (
         <div className="footer">
-          <div onClick={this.displayPanel} className="footer-settings"></div>
+          <div onClick={this.displayPanel} className="footer-settings">
+            <FontAwesomeIcon icon={faCog} />
+          </div>
           <div className="footer-settings-panel">
-          <div className="panel-group">
+          <form className="panel-group" onSubmit={this.onSubmit}>
             <label htmlFor="cost-field">Cost:</label>
             <div className="button-group">
             <input type="radio" name="cost" value="1" onChange={this.onChange} /><label>$</label><br/>
@@ -42,8 +57,8 @@ class Footer extends React.Component {
               id="location-field"
               onChange={this.onChange}
             />
-          </div>
           <button className="btn btn-panel" type="submit">Submit</button>
+          </form>
           </div>
         </div>
       );
@@ -51,6 +66,7 @@ class Footer extends React.Component {
       return (
         <div className="footer">
           <div onClick={this.displayPanel} className="footer-settings">
+            <FontAwesomeIcon icon={faCog} />
           </div>
         </div>
       );
