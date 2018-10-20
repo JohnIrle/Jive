@@ -6,7 +6,7 @@ class RegisterUser extends React.Component {
     return (
       <div className="form">
         <div className="form-header">
-          <h1>Jive</h1>
+          <h1>Register</h1>
         </div>
         <UserInput className="form-input" />
       </div>

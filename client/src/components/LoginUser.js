@@ -6,7 +6,7 @@ class LoginUser extends React.Component {
     return (
       <div className="form">
         <div className="form-header">
-          <h1>Jive</h1>
+          <h1>Login</h1>
         </div>
         <LoginInput className="form-input" />
       </div>
