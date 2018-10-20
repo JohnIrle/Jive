@@ -25,10 +25,18 @@
   .form {
     width: 100%;
     max-width: 50rem;
-    height: 70rem;
+    height: 70vh;
     box-shadow: 0.5rem 0.5rem 2rem rgba($black, 0.3);
     position: relative;
     background: #FFF;
+
+    @include respond(tablet-bg) {
+      max-width: 60rem;
+    }
+
+    @include respond(phone) {
+      max-width: none;
+    }
 
     &-header {
       width: 100%;
