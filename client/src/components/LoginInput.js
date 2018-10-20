@@ -1,7 +1,10 @@
 import React from "react";
-import axios from "axios";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { loginUser } from "../actions/authActions";
 
-export default class LoginInput extends React.Component {
+class LoginInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,6 +15,16 @@ export default class LoginInput extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/result");
+    }
+
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -19,18 +32,17 @@ export default class LoginInput extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const logUser = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
 
-    axios
-      .post("/api/users/login", logUser)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err.response.data));
+    this.props.loginUser(userData);
   }
 
   render() {
+    const { errors } = this.state;
+
     return (
       <div>
         <form id="simple-form" onSubmit={this.onSubmit}>
@@ -56,3 +68,19 @@ export default class LoginInput extends React.Component {
     );
   }
 }
+
+LoginInput.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(withRouter(LoginInput));

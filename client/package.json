@@ -9,6 +9,7 @@
     "axios": "^0.18.0",
     "dom": "0.0.3",
     "informed": "^1.10.7",
+    "jwt-decode": "2.2.0",
     "node-sass": "^4.9.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

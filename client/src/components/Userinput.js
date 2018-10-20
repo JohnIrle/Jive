@@ -1,21 +1,31 @@
 import React from "react";
-import axios from "axios";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { registerUser } from "../actions/authActions";
 
-export default class UserInput extends React.Component {
+class UserInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      email: '',
-      password: '',
-      password2: ''
+      name: "",
+      email: "",
+      password: "",
+      password2: "",
+      errors: {}
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onChange(e) {
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   onSubmit(e) {
@@ -28,26 +38,64 @@ export default class UserInput extends React.Component {
       password2: this.state.password2
     };
 
-    axios.post("/api/users/register", newUser)
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err.response.data));
+    this.props.registerUser(newUser, this.props.history);
   }
 
   render() {
+    const { errors } = this.state.errors;
+
     return (
       <div>
         <form id="simple-form" onSubmit={this.onSubmit}>
           <label htmlFor="name-field">Name:</label>
-          <input type="name" name="name" id="name-field" onChange={this.onChange} />
+          <input
+            type="name"
+            name="name"
+            id="name-field"
+            onChange={this.onChange}
+          />
           <label htmlFor="email-field">Email:</label>
-          <input type="email" name="email" id="email-field" onChange={this.onChange} />
+          <input
+            type="email"
+            name="email"
+            id="email-field"
+            onChange={this.onChange}
+          />
           <label htmlFor="password-field">Password:</label>
-          <input type="password" name="password" id="password-field" onChange={this.onChange} />
+          <input
+            type="password"
+            name="password"
+            id="password-field"
+            onChange={this.onChange}
+          />
           <label htmlFor="password2-field">Confirm:</label>
-          <input type="password" name="password2" id="confirm-field" onChange={this.onChange}/>
-          <button className="btn btn-form" type="submit">Submit</button>
+          <input
+            type="password"
+            name="password2"
+            id="confirm-field"
+            onChange={this.onChange}
+          />
+          <button className="btn btn-form" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );
   }
 }
+
+UserInput.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(UserInput));
