@@ -9,15 +9,22 @@ class HomeUser extends React.Component {
           <div className="home-form-header">
             <h1>Make a Plan?</h1>
           </div>
-          <div className="option option-1">
-            <Link to="/">
-              Plan now
-            </Link>
-          </div>
-          <div className="option option-2">
-            <Link to="/plantomorrow">
-              Plan tomorrow
-            </Link>
+          <div className="option">
+            <div className="option-1">
+              <Link to="/">
+                Bored?
+              </Link>
+            </div>
+            <div className="option-2">
+              <Link to="/">
+                Hungry?
+              </Link>
+            </div>
+            <div className="option-3">
+              <Link to="/plantomorrow">
+                Plan tomorrow
+              </Link>
+            </div>
           </div>
         </div>
       </div>
