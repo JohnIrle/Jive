@@ -61,25 +61,6 @@ router.post("/register", (req, res) => {
   });
 });
 
-// // @route GET api/users/register/facebook
-// // @desc Register a user using facebook
-// // @access Public
-// router.post(
-//   "/login/facebook/token",
-//   passport.authenticate("facebook-token", {session: false}),
-//   (req, res) => {
-//     res.send(req.user);
-//     //Create JWT Payload
-//     // Sign Token
-//     jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
-//       res.json({
-//         success: true,
-//         token: "Bearer " + token
-//       });
-//     });
-//   }
-// );
-
 // @route GET api/users/login
 // @desc Login User / Returning JWT Token
 // @access Public
