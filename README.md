@@ -1,10 +1,10 @@
 # Jive
 
-Jive is a web based application that randomly generates activites or ideas to do in your spare time so that the user has to do as little thinking as possible. Tailored to the user's preferences, a user can choose to do something right at that instant, or plan for a whole day! After answering a few initial preference questions, the application stores the information to give great suggestions. Also, Jive uses a lot of pre-existing technology to add to the user's expierence.
+Jive is a web application that generates activites and ideas for you to do in your spare time so that you have to do as little thinking as possible. Tailored to the user's preferences, a user can choose to do something right at that instant, or plan for a whole day! After answering a few initial preference questions, the application stores the information to give great suggestions. Also, Jive uses a lot of pre-existing technology to add to the user's expierence.
 
 ## Getting Started
 
-Jive is a web-based application so the user simply goes to our website and registers. The user can choose to create an account or sign in via Facebook or Google. 
+Jive is a web application so you can simply goes to the website and register. 
 
 ### Languages
 HTML, CSS, JS, 
