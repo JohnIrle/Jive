@@ -1,5 +1,6 @@
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
+// const FacebookStrategy = require("passport-facebook").Strategy;
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
 const keys = require("../config/keys");
@@ -21,4 +22,17 @@ module.exports = passport => {
         .catch(err => console.log(err));
     })
   );
+
+  // passport.use(
+  //   new FacebookStrategy(
+  //     {
+  //       clientID: FACEBOOK_APP_ID,
+  //       clientSecret: FACEBOOK_APP_SECRET,
+  //       callbackURL: "http://localhost:5000/api/users/facebook/callback"
+  //     },
+  //     (accessToken, profile, cb) => {
+  //       User.find;
+  //     }
+  //   )
+  // );
 };
