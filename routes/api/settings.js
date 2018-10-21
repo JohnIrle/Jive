@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
-const axios = require("axios");
+const axios = require("../../client/node_modules/axios");
 
 const Setting = require("../../models/Setting");
 const User = require("../../models/User");
@@ -49,7 +49,8 @@ router.get(
           "&radius=40000&price=" +
           req.body.cost
       )
-      .then(result => res.json(result));
+      .then(result => res.json(result))
+      .catch(error => res.json(error));
   }
 );
 

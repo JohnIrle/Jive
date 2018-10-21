@@ -1,7 +1,7 @@
 {
-  "name": "hack-a-thon",
+  "name": "Jive",
   "version": "1.0.0",
-  "description": "base for hack a thon",
+  "description": "Jive Web App",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
