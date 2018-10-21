@@ -13,6 +13,8 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Landing from "./pages/Landing";
 import PlanTomorrow from "./pages/PlanTomorrow";
+import PlanNow from "./pages/PlanNow";
+import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
@@ -48,6 +50,8 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/plantomorrow" component={PlanTomorrow} />
+            <Route exact path="/plannow" component={PlanNow} />
+            <Route exact path="/about" component={About} />
             <Footer />
           </div>
         </Router>

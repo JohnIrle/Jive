@@ -50,7 +50,7 @@ class LoginInput extends React.Component {
     const { errors } = this.state;
 
     return (
-      <div>
+      <div className="login-form">
         <form id="simple-form" onSubmit={this.onSubmit}>
           <label htmlFor="login-email-field">Email:</label>
           <input

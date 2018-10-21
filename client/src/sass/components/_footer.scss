@@ -7,10 +7,39 @@
   box-shadow: -2px -2px 2px rgba($black,0.3);
   z-index: 10;
 
+  &-menu {
+    margin: 0 auto;
+    max-width: 120rem;
+    position: relative;
+
+    svg {
+      font-size: 4rem;
+      color: $white;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+    }
+
+    .about-icon {
+      right: 0;
+      bottom: 0.5rem;
+      margin-right: 2rem;
+      float: right;
+      position: absolute;
+    }
+    .about-text {
+      right: 0;
+      bottom: 1rem;
+      margin-right: 9rem;
+      float: right;
+      position: absolute;
+      font-size: 2rem;
+      text-shadow: 2px 1px 2px rgba($black, 0.3);
+    }
+  }
+
   &-settings {
     height: 5rem;
     width: 5rem;
-    background: $black;
 
     &-panel {
       position: absolute;
@@ -20,7 +49,7 @@
       background: darken($white, 5%);
       color: #7D8387;
 
-      div.panel-group {
+      .panel-group {
         margin-top: 2rem;
         margin-left: 2.5rem;
       }

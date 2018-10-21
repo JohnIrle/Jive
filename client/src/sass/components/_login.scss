@@ -53,14 +53,11 @@
         text-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.3);
         animation: fade-in 0.3s ease;
       }
-
-      h2 {
-        font-size: 5rem;
-        color: $white;
-        text-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.3);
-        animation: fade-in 0.3s ease;
-      }
     }
+  }
+
+  div.login-form {
+    margin-top: 9rem;
   }
 
   #simple-form {

@@ -1,0 +1,20 @@
+.nowform {
+  width: 100%;
+  max-width: 50rem;
+  height: 70vh;
+  box-shadow: 0.5rem 0.5rem 2rem rgba($black, 0.3);
+  position: relative;
+  display: block;
+  background: #F5BB00;
+
+  h2 {
+    font-size: 4.5rem;
+    margin-top: 1rem;
+    color: $white;
+    text-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.3);
+    animation: fade-in 0.3s ease;
+    text-align: center;
+  }
+
+
+}
