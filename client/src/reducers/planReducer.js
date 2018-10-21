@@ -1,7 +1,12 @@
-import { GET_PLANS, PLAN_LOADING } from "../actions/types";
+import {
+  GET_FOOD_PLANS,
+  GET_ACTIVITY_PLANS,
+  PLAN_LOADING
+} from "../actions/types";
 
 const initalState = {
-  result: {},
+  food: {},
+  activities: {},
   triggered: false,
   loading: false
 };
@@ -13,11 +18,16 @@ export default function(state = initalState, action) {
         ...state,
         loading: true
       };
-    case GET_PLANS:
+    case GET_FOOD_PLANS:
       return {
         ...state,
-        result: action.payload,
-        triggered: true,
+        food: action.payload,
+        loading: false
+      };
+    case GET_ACTIVITY_PLANS:
+      return {
+        ...state,
+        activities: action.payload,
         loading: false
       };
     default:

@@ -73,25 +73,21 @@ router.get("/food", (req, res) => {
 // @route GET api/settings/activity
 // @desc Return current user
 // @access Private
-router.get(
-  "/activity",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    axios
-      .get(
-        foodSearch +
-          "location=kansascity" +
-          "&&radius=" +
-          radius +
-          "&&cost=1,2" +
-          "&&categories=active,experiences,hiking,rock_climbing,waterparks",
-        { headers: { Authorization: "Bearer " + apiKey } }
-      )
-      .then(result => {
-        res.json(result.data);
-      })
-      .catch(err => console.log(err));
-  }
-);
+router.get("/activity", (req, res) => {
+  axios
+    .get(
+      foodSearch +
+        "location=kansascity" +
+        "&&radius=" +
+        radius +
+        "&&cost=1,2" +
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data);
+    })
+    .catch(err => console.log(err));
+});
 
 module.exports = router;

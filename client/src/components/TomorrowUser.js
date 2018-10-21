@@ -2,7 +2,7 @@ import React from "react";
 import { CometSpinLoader } from "react-css-loaders";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getPlans } from "../actions/planActions";
+import { getFoodPlans, getActivityPlans } from "../actions/planActions";
 
 class TomorrowUser extends React.Component {
   constructor(props) {
@@ -19,7 +19,8 @@ class TomorrowUser extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getPlans();
+    this.props.getFoodPlans();
+    this.props.getActivityPlans();
     this.setState({ result: this.props.plan.result });
   }
 
@@ -75,5 +76,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getPlans }
+  { getFoodPlans,getActivityPlans }
 )(TomorrowUser);
