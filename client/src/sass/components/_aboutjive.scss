@@ -5,51 +5,101 @@
   z-index: 2;
 
   .aboutcontainer {
-    width: 100%;
-    height: 100%;
-    max-width: 120rem;
-    margin: 0 auto;
+    display: grid;
+    display: grid;
+    grid-template-rows: 5rem 20vh 20vh 20vh 20vh 5rem;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @include respond(tablet) {
+      grid-template-rows: 5rem 16vh 16vh 16vh 16vh 16vh 5rem;
+    }
 
     &-head {
-      width: 100%;
-      height: 18rem;
+      grid-column: center-start / center-end;
+      grid-row: 1 / 3;
       display: flex;
-      flex-wrap:wrap;
-      justify-content: center;
-      align-content: center;
+      flex-wrap: wrap;
       text-align: center;
+      align-content: center;
 
       h1 {
-        color: $white;
         width: 100%;
-        font-size: 4rem;
-        margin: 6rem 0rem 1.5rem 0rem;
-        color: #363636;
-        text-shadow: 2px 1px 2px rgba($black, 0.3);
+        margin: 2rem 0rem;
+        font-size: 3rem;
+
+        @include respond(phone) {
+          margin-top: 5rem;
+        }
       }
       h2 {
-        color: $white;
         width: 100%;
         font-size: 1.5rem;
-        color: #404040;
-        text-shadow: 2px 1px 2px rgba($black, 0.3);
+      }
+    }
+
+    &-image {
+      grid-column: center-start / col-end 4;
+      grid-row: 3 / 5;
+      box-shadow: 3px 3px 0.5rem rgba($black, 0.3);
+      margin: 1rem 4rem;
+      @include respond(tablet) {
+        grid-column: center-start / center-end;
       }
     }
 
     &-body {
-      width: 100%;
-      font-size: 1.5rem;
-      color: #404040;
-      margin: 2rem 0rem;
+      grid-column: col-start 5 / center-end;
+      grid-row: 3 / 5;
+
+      @include respond(tablet) {
+        grid-row: 5 / 6;
+        grid-column: center-start / center-end;
+      }
+
+      @include respond(phone) {
+        display: none;
+      }
 
       p {
-        margin: 1rem 0rem;
+        font-size: 1.5rem;
+        margin: 1rem 0.5rem;
       }
     }
 
-    &-footer {
-      width: 100%;
+    &-footer-text {
+      grid-column: col-start 3 / col-end 4;
+      grid-row: 5 / 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid $black;
+
+      @include respond(tablet) {
+        grid-row: 6 / 7;
+      }
+
+      h2 {
+        font-size: 4rem;
+        font-weight: 300;
+      }
     }
 
+    &-footer-icons {
+      grid-column: col-start 5 / center-end;
+      grid-row: 5 / 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include respond(tablet) {
+        grid-row: 6 / 7;
+      }
+
+      svg {
+        color: $primary-dark;
+        font-size: 10rem;
+        margin: 0rem 3rem
+      }
+    }
   }
 }
