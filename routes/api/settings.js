@@ -21,16 +21,41 @@ router.get("/test", (req, res) => {
 });
 
 // @route POST api/settings
-router.post("/", (req, res) => {
-  Settings.findOneAndUpdate(req.body.id).then();
-});
+
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // get fields
+    const settingFields = {};
+    settingFields.user = req.user.id;
+    if (req.body.cost) settingFields.cost = req.body.cost;
+    if (req.body.location) settingFields.location = req.body.location;
+
+    Setting.findOne({ user: req.user.id }).then(setting => {
+      if (setting) {
+        //Update
+        Setting.findOneAndUpdate(
+          { user: req.user.id },
+          { $set: settingFields },
+          { new: true }
+        ).then(setting => res.json(setting));
+      } else {
+        // Create
+
+        // Save setting
+        new Setting(settingFields).save().then(setting => res.json(setting));
+      }
+    });
+  }
+);
 
 // @route GET api/settings/current
 router.get("/current", (req, res) => {
   Settings.findOne(req.body.id).then(setting => res.json(setting));
 });
 
-// @route GET api/settings/food/multiple
+// @route GET api/settings/food
 // @desc Return current user
 // @access Private
 router.post(
@@ -55,7 +80,7 @@ router.post(
   }
 );
 
-// @route GET api/users/current
+// @route GET api/settings/activity
 // @desc Return current user
 // @access Private
 router.post(
