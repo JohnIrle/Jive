@@ -1,14 +1,9 @@
 import React from "react";
-import HomeUser from "../components/HomeUser";
+import NowUser from "../components/NowUser.js";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-class Home extends React.Component {
-  componentDidMount() {
-    if (!this.props.auth.isAuthenticated) {
-      this.props.history.push("/login");
-    }
-  }
+class PlanNow extends React.Component {
 
   componentDidUpdate() {
     if (!this.props.auth.isAuthenticated) {
@@ -17,11 +12,11 @@ class Home extends React.Component {
   }
 
   render() {
-    return <HomeUser />;
+    return <NowUser />;
   }
 }
 
-Home.propTypes = {
+PlanNow.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
@@ -29,4 +24,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(PlanNow);

@@ -5,7 +5,11 @@ class LandingUser extends React.Component {
     return (
       <div className="landing">
         <div className="landing-header">
-          <img className="landing-header-img" src={require('../assets/jive.png')} alt="Jive Logo" />
+          <img
+            className="landing-header-img"
+            src={require("../assets/jive.png")}
+            alt="Jive Logo"
+          />
         </div>
       </div>
     );

@@ -18,6 +18,12 @@ class UserInput extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  omponentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/home");
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
