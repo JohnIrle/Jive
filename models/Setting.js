@@ -9,11 +9,11 @@ const SettingSchema = new Schema({
   },
   cost: {
     type: String,
-    required: true
+    required: false
   },
   location: {
     type: String,
-    required: true
+    required: false
   },
   date: {
     type: Date,

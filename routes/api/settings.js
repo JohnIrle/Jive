@@ -58,44 +58,32 @@ router.get("/current", (req, res) => {
 // @route GET api/settings/food
 // @desc Return current user
 // @access Private
-router.post(
-  "/food",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    axios
-      .get(
-        foodSearch +
-          "location=" +
-          req.body.location +
-          "&&radius=" +
-          radius +
-          "&&cost=" +
-          req.body.cost,
-        { headers: { Authorization: "Bearer " + apiKey } }
-      )
-      .then(result => {
-        res.json(result.data);
-      })
-      .catch(err => res.json(err));
-  }
-);
+router.get("/food", (req, res) => {
+  axios
+    .get(
+      foodSearch + "location=kansascity" + "&&radius=" + radius + "&&cost=1,2",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data);
+    })
+    .catch(err => res.json(err));
+});
 
 // @route GET api/settings/activity
 // @desc Return current user
 // @access Private
-router.post(
+router.get(
   "/activity",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     axios
       .get(
         foodSearch +
-          "location=" +
-          req.body.location +
+          "location=kansascity" +
           "&&radius=" +
           radius +
-          "&&cost=" +
-          req.body.cost +
+          "&&cost=1,2" +
           "&&categories=active,experiences,hiking,rock_climbing,waterparks",
         { headers: { Authorization: "Bearer " + apiKey } }
       )
