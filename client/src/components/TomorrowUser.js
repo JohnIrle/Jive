@@ -1,4 +1,10 @@
 import React from "react";
+
+import { CometSpinLoader } from "react-css-loaders";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getFoodPlans, getActivityPlans } from "../actions/planActions";
+
 import TomorrowInput from "./TomorrowInput";
 
 class TomorrowUser extends React.Component {
@@ -6,8 +12,19 @@ class TomorrowUser extends React.Component {
     super(props);
 
     this.state = {
-      buisnesses: [1,2,3,4,5,6]
+      load: false,
+      settings: {
+        cost: "1,2",
+        location: "kansas city"
+      },
+      result: []
     };
+  }
+
+  componentDidMount() {
+    this.props.getFoodPlans();
+    this.props.getActivityPlans();
+    this.setState({ result: this.props.plan.result });
   }
 
   render() {
@@ -39,4 +56,16 @@ class TomorrowUser extends React.Component {
   }
 }
 
-export default TomorrowUser;
+TomorrowUser.propTypes = {
+  result: PropTypes.object.isRequired,
+  getPlans: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  plan: state.plan
+});
+
+export default connect(
+  mapStateToProps,
+  { getFoodPlans,getActivityPlans }
+)(TomorrowUser);
