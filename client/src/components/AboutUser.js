@@ -15,7 +15,11 @@ class AboutUser extends React.Component {
             <h2>Welcome to the community that has escaped the inconvenience of decision making and day planning. </h2>
           </div>
           <div className="aboutcontainer-image">
-
+          <img
+            className="landing-header-img"
+            src={require("../assets/team3.png")}
+            alt="Jive Logo"
+          />
           </div>
           <div className="aboutcontainer-body">
             <p>Does making plans stress you out? Do you often have trouble finding fun ways to spend your day? Fear no more, for Jive is here to do the thinking for you!</p>
