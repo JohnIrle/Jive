@@ -10,6 +10,7 @@
   "author": "John Irle <irlejohn@gmail.com> (http://johnirle.com/)",
   "license": "MIT",
   "dependencies": {
+    "axios": "0.18.0",
     "bcryptjs": "2.4.3",
     "body-parser": "1.18.3",
     "express": "4.16.3",
@@ -21,7 +22,8 @@
     "react-redux": "5.0.7",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
-    "validator": "10.8.0"
+    "validator": "10.8.0",
+    "yelp-fusion": "2.2.1"
   },
   "devDependencies": {
     "nodemon": "1.18.4"
