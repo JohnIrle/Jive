@@ -61,6 +61,32 @@ router.post("/register", (req, res) => {
   });
 });
 
+// @route GET api/users/facebook
+// @desc Redirect user to facebook
+// @access Public
+// router.get("/facebook", passport.authenticate("facebook"));
+
+// // @route GET api/user/facebook/callback
+// // @desc Pass JWT to user after successful facebook login
+// //  @access Private
+// router.get(
+//   "/facebook/callback",
+//   passport.authenticate("facebook", { failureRedirect: "/login" }),
+//   (req, res) => {
+//     User.findOne({});
+
+//     const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create JWT Payload
+
+//     // Sign Token
+//     jwt.sign(payload, keys.secretOrKey, { expiresIn: 10000 }, (err, token) => {
+//       res.json({
+//         success: true,
+//         token: "Bearer " + token
+//       });
+//     });
+//   }
+// );
+
 // @route GET api/users/login
 // @desc Login User / Returning JWT Token
 // @access Public
