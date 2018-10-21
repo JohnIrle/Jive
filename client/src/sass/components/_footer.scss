@@ -41,6 +41,13 @@
     height: 5rem;
     width: 5rem;
 
+    svg {
+      font-size: 4rem;
+      color: $white;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+    }
+
     &-panel {
       position: absolute;
       bottom: 5rem;

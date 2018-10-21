@@ -2,79 +2,107 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
+const axios = require("../../client/node_modules/axios");
+const yelp = require("yelp-fusion");
 
 const Setting = require("../../models/Setting");
 const User = require("../../models/User");
+
+const apiKey = keys.yelpKey;
+const foodSearch = "https://api.yelp.com/v3/businesses/search?";
+const eventSearch = "https://api.yelp.com/v3/events";
+const foodterm = "food";
+const activityterm = "";
+const radius = 40000;
 
 router.get("/test", (req, res) => {
   res.json("it works");
 });
 
 // @route POST api/settings
-router.post("/", (req, res) => {});
+
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // get fields
+    const settingFields = {};
+    settingFields.user = req.user.id;
+    if (req.body.cost) settingFields.cost = req.body.cost;
+    if (req.body.location) settingFields.location = req.body.location;
+
+    Setting.findOne({ user: req.user.id }).then(setting => {
+      if (setting) {
+        //Update
+        Setting.findOneAndUpdate(
+          { user: req.user.id },
+          { $set: settingFields },
+          { new: true }
+        ).then(setting => res.json(setting));
+      } else {
+        // Create
+
+        // Save setting
+        new Setting(settingFields).save().then(setting => res.json(setting));
+      }
+    });
+  }
+);
 
 // @route GET api/settings/current
 router.get("/current", (req, res) => {
-  Settings.findOne(req.id).then(setting => res.json(setting));
+  Settings.findOne(req.body.id).then(setting => res.json(setting));
 });
 
-// @route GET api/settings/food/multiple
+// @route GET api/settings/food
 // @desc Return current user
 // @access Private
-router.get(
-  "/food/multiple",
+router.post(
+  "/food",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json({
-      id: req.user.id,
-      name: req.user.name,
-      email: req.user.email
-    });
+    axios
+      .get(
+        foodSearch +
+          "location=" +
+          req.body.location +
+          "&&radius=" +
+          radius +
+          "&&cost=" +
+          req.body.cost,
+        { headers: { Authorization: "Bearer " + apiKey } }
+      )
+      .then(result => {
+        res.json(result.data);
+      })
+      .catch(err => res.json(err));
   }
 );
 
-// @route GET api/users/current
+// @route GET api/settings/activity
 // @desc Return current user
 // @access Private
-router.get(
-  "/food/single",
+router.post(
+  "/activity",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json({
-      id: req.user.id,
-      name: req.user.name,
-      email: req.user.email
-    });
-  }
-);
-
-// @route GET api/users/current
-// @desc Return current user
-// @access Private
-router.get(
-  "/activity/multiple",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json({
-      id: req.user.id,
-      name: req.user.name,
-      email: req.user.email
-    });
-  }
-);
-
-// @route GET api/users/current
-// @desc Return current user
-// @access Private
-router.get(
-  "/activity/single",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json({
-      id: req.user.id,
-      name: req.user.name,
-      email: req.user.email
-    });
+    axios
+      .get(
+        foodSearch +
+          "location=" +
+          req.body.location +
+          "&&radius=" +
+          radius +
+          "&&cost=" +
+          req.body.cost +
+          "&&categories=active,experiences,hiking,rock_climbing,waterparks",
+        { headers: { Authorization: "Bearer " + apiKey } }
+      )
+      .then(result => {
+        res.json(result.data);
+      })
+      .catch(err => console.log(err));
   }
 );
 

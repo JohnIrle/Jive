@@ -105,6 +105,7 @@
         color: #FFF;
         text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
         animation: fade-in 0.3s ease; }
+
   .App div.login-form {
     margin-top: 9rem; }
   .App #simple-form {
@@ -223,6 +224,7 @@
     animation: fade-in 0.3s ease;
     text-align: center; }
 
+
 .navbar {
   position: absolute;
   top: 0%;
@@ -284,6 +286,11 @@
   .footer-settings {
     height: 5rem;
     width: 5rem; }
+    .footer-settings svg {
+      font-size: 4rem;
+      color: #FFF;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem; }
     .footer-settings-panel {
       position: absolute;
       bottom: 5rem;

@@ -1,8 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
+
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+
 
 class Footer extends React.Component {
   constructor(props) {
@@ -39,6 +41,7 @@ class Footer extends React.Component {
     if(this.state.click) {
       return (
         <div className="footer">
+
           <div className="footer-menu">
             <div onClick={this.displayPanel} className="footer-settings">
               <FontAwesomeIcon icon={faCog} />
@@ -67,6 +70,7 @@ class Footer extends React.Component {
               About Jive
             </Link>
             <FontAwesomeIcon className="about-icon"  icon={faUsers} />
+
           </div>
         </div>
       );
