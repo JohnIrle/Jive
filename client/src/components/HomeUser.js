@@ -11,12 +11,12 @@ class HomeUser extends React.Component {
           </div>
           <div className="option">
             <div className="option-1">
-              <Link to="/">
+              <Link to="/plannow">
                 Bored?
               </Link>
             </div>
             <div className="option-2">
-              <Link to="/">
+              <Link to="/plannow">
                 Hungry?
               </Link>
             </div>

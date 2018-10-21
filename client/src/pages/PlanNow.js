@@ -1,9 +1,9 @@
 import React from "react";
-import TomorrowUser from "../components/TomorrowUser";
+import NowUser from "../components/NowUser.js";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-class PlanTomorrow extends React.Component {
+class PlanNow extends React.Component {
 
   componentDidUpdate() {
     if (!this.props.auth.isAuthenticated) {
@@ -12,11 +12,11 @@ class PlanTomorrow extends React.Component {
   }
 
   render() {
-    return <TomorrowUser />;
+    return <NowUser />;
   }
 }
 
-PlanTomorrow.propTypes = {
+PlanNow.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
@@ -24,4 +24,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps)(PlanTomorrow);
+export default connect(mapStateToProps)(PlanNow);
