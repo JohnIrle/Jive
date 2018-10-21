@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
+const axios = require("axios");
 
 const Setting = require("../../models/Setting");
 const User = require("../../models/User");
@@ -40,11 +42,14 @@ router.get(
   "/food/single",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json({
-      id: req.user.id,
-      name: req.user.name,
-      email: req.user.email
-    });
+    axios
+      .get(
+        "https://api.yelp.com/v3/businesses/search?term='Delivery'&location=" +
+          req.body.location +
+          "&radius=40000&price=" +
+          req.body.cost
+      )
+      .then(result => res.json(result));
   }
 );
 

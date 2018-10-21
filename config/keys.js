@@ -1,6 +1,7 @@
 module.exports = {
   mongoURI: "mongodb://admin:admin123@ds225253.mlab.com:25253/fed-hack-a-thon",
   secretOrKey: "secret",
-  facebookClientID: "738062f20c53788f581da874289b6f01",
-  facbookSecret: "bf320afb95737a9af81f9b31902146d2"
+  yelpClient: "LTiLd1no2RTrVC8NhX-J8w",
+  yelpKey:
+    "PJCw47ppxZQnix5xbcxGmNtf2CKBHRpo6QUGJAJSsaUyNKGQ2qUXEidpe65TYDI2RxWqu4tq1oRRiyI-L2zcbeV5epmpjKUKB6A1I3ycyqt9k3_n_belIgEmXr7LW3Yx"
 };
