@@ -62,13 +62,21 @@
   background-color: #FFF;
   height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-image: url("./assets/architecture.jpg");
   background-repeat: no-repeat;
   background-position: left center;
+  -webkit-animation: bckgrnd-slide 120s ease-in infinite;
   animation: bckgrnd-slide 120s ease-in infinite; }
   .App:before {
     content: '';
@@ -77,12 +85,15 @@
     right: 0;
     bottom: 0;
     left: 0;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#FFF), to(#FFF));
     background-image: linear-gradient(to bottom right, #FFF, #FFF);
     opacity: 0.6; }
   .App .form {
     width: 100%;
     max-width: 50rem;
     height: 70vh;
+    min-height: 60rem;
+    -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
     box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
     position: relative;
     background: #FFF; }
@@ -96,19 +107,27 @@
       width: 100%;
       height: 13rem;
       background-color: #60BF0C;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 77%);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 77%); }
       .App .form-header h1 {
         font-size: 7rem;
         color: #FFF;
         text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        -webkit-animation: fade-in 0.3s ease;
         animation: fade-in 0.3s ease; }
-
   .App div.login-form {
     margin-top: 9rem; }
   .App #simple-form {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 auto;
     width: 40rem; }
@@ -138,12 +157,14 @@
       background-color: #60BF0C;
       left: 0%;
       bottom: 0%;
+      -webkit-clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%);
       clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%); }
 
 .tomorrowform {
   width: 100%;
   max-width: 50rem;
   height: 70vh;
+  min-height: 62rem;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
   position: relative;
   display: block;
@@ -160,6 +181,7 @@
     left: 5%;
     position: relative;
     height: 60vh;
+    min-height: 53rem;
     margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -170,6 +192,7 @@
       background: #FFF;
       width: 100%;
       height: 9vh;
+      min-height: 8rem;
       display: block;
       opacity: 0;
       animation: fall-down 0.6s;
@@ -212,6 +235,7 @@
   width: 100%;
   max-width: 50rem;
   height: 70vh;
+  min-height: 62rem;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
   position: relative;
   display: block;
@@ -223,7 +247,6 @@
     text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
     animation: fade-in 0.3s ease;
     text-align: center; }
-
 
 .navbar {
   position: absolute;
@@ -407,40 +430,77 @@
   background-color: #FFF;
   z-index: 2; }
   .aboutjive .aboutcontainer {
-    width: 100%;
-    height: 100%;
-    max-width: 120rem;
-    margin: 0 auto; }
+    display: grid;
+    display: grid;
+    grid-template-rows: 5rem 20vh 20vh 20vh 20vh 5rem;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+    @media only screen and (max-width: 56.25em) {
+      .aboutjive .aboutcontainer {
+        grid-template-rows: 5rem 16vh 16vh 16vh 16vh 16vh 5rem; } }
     .aboutjive .aboutcontainer-head {
-      width: 100%;
-      height: 18rem;
+      grid-column: center-start / center-end;
+      grid-row: 1 / 3;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      align-content: center;
-      text-align: center; }
+      text-align: center;
+      align-content: center; }
       .aboutjive .aboutcontainer-head h1 {
-        color: #FFF;
         width: 100%;
-        font-size: 4rem;
-        margin: 6rem 0rem 1.5rem 0rem;
-        color: #363636;
-        text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3); }
+        margin: 2rem 0rem;
+        font-size: 3rem; }
+        @media only screen and (max-width: 37.5em) {
+          .aboutjive .aboutcontainer-head h1 {
+            margin-top: 5rem; } }
       .aboutjive .aboutcontainer-head h2 {
-        color: #FFF;
         width: 100%;
-        font-size: 1.5rem;
-        color: #404040;
-        text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3); }
+        font-size: 1.5rem; }
+    .aboutjive .aboutcontainer-image {
+      grid-column: center-start / col-end 4;
+      grid-row: 3 / 5;
+      box-shadow: 3px 3px 0.5rem rgba(0, 0, 0, 0.3);
+      margin: 1rem 4rem; }
+      @media only screen and (max-width: 56.25em) {
+        .aboutjive .aboutcontainer-image {
+          grid-column: center-start / center-end; } }
     .aboutjive .aboutcontainer-body {
-      width: 100%;
-      font-size: 1.5rem;
-      color: #404040;
-      margin: 2rem 0rem; }
+      grid-column: col-start 5 / center-end;
+      grid-row: 3 / 5; }
+      @media only screen and (max-width: 56.25em) {
+        .aboutjive .aboutcontainer-body {
+          grid-row: 5 / 6;
+          grid-column: center-start / center-end; } }
+      @media only screen and (max-width: 37.5em) {
+        .aboutjive .aboutcontainer-body {
+          display: none; } }
       .aboutjive .aboutcontainer-body p {
-        margin: 1rem 0rem; }
-    .aboutjive .aboutcontainer-footer {
-      width: 100%; }
+        font-size: 1.5rem;
+        margin: 1rem 0.5rem; }
+    .aboutjive .aboutcontainer-footer-text {
+      grid-column: col-start 3 / col-end 4;
+      grid-row: 5 / 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #000; }
+      @media only screen and (max-width: 56.25em) {
+        .aboutjive .aboutcontainer-footer-text {
+          grid-row: 6 / 7; } }
+      .aboutjive .aboutcontainer-footer-text h2 {
+        font-size: 4rem;
+        font-weight: 300; }
+    .aboutjive .aboutcontainer-footer-icons {
+      grid-column: col-start 5 / center-end;
+      grid-row: 5 / 6;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      @media only screen and (max-width: 56.25em) {
+        .aboutjive .aboutcontainer-footer-icons {
+          grid-row: 6 / 7; } }
+      .aboutjive .aboutcontainer-footer-icons svg {
+        color: #5AB20B;
+        font-size: 10rem;
+        margin: 0rem 3rem; }
 
 *,
 *::before,
