@@ -14,7 +14,7 @@ class NowUser extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     axios
       .get("/api/settings/food/now")
       .then(res => this.setState({ food: res.data }));
