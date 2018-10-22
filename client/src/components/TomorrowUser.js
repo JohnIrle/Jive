@@ -25,6 +25,8 @@ class TomorrowUser extends React.Component {
       activity3: {},
       food3: {}
     };
+
+    this.handleRefresh = this.handleRefresh.bind(this);
   }
 
   componentWillMount() {
@@ -38,7 +40,7 @@ class TomorrowUser extends React.Component {
 
     axios
       .get("/api/settings/activity")
-      .then(res => this.setState({ activities2: res.data }));
+      .then(res => this.setState({ activity2: res.data }));
 
     axios
       .get("/api/settings/food")
@@ -46,73 +48,66 @@ class TomorrowUser extends React.Component {
 
     axios
       .get("/api/settings/activity")
-      .then(res => this.setState({ activities3: res.data }));
+      .then(res => this.setState({ activity3: res.data }));
 
     axios
       .get("/api/settings/food")
       .then(res => this.setState({ food3: res.data }));
   }
 
-  render() {
-    // const limitTitle = (title, limit = 17) => {
-    //   const newTitle = [];
-    //   if(title.length > limit) {
-    //     title.split(' ').reduce((acc, curr) => {
-    //       if(acc + curr.length <= limit) {
-    //         newTitle.push(curr);
-    //       }
-    //       return acc + curr.length;
-    //     }, 0);
-    //     return `${newTitle.join(' ')}...`;
-    //   } else {
-    //     return title;
-    //   }
-    // }
+  handleRefresh(e) {
+    console.log(e.target);
+    // axios.get("/api/setting/food").then(this.setState({[e.target]: res.data}));
+  }
 
+  render() {
+    
+    console.log(this.state.activity2);
     return (
       <div className="tomorrowform">
         <h2>Tomorrows Plan:</h2>
         <ul className="tomorrowform-data">
           <li id="item1">
             <TomorrowInput
+              handleRefresh={this.handleRefresh}
               activity={this.state.activity1.name}
-              distance="2.3"
-              desc="Fresh delicious dougnuts"
+              phone={this.state.activity1.display_phone}
+              rating={this.state.activity1.rating}
             />
           </li>
           <li id="item2">
             <TomorrowInput
               activity={this.state.food1.name}
-              distance="0"
-              desc="Cover the basics!"
+              phone={this.state.food1.display_phone}
+              rating={this.state.food1.rating}
             />
           </li>
           <li id="item3">
             <TomorrowInput
               activity={this.state.activity2.name}
-              distance="7.8"
-              desc="Quality subs and sandwhiches"
+              phone={this.state.activity2.display_phone}
+              rating={this.state.activity2.rating}
             />
           </li>
           <li id="item4">
             <TomorrowInput
               activity={this.state.food2.name}
-              distance="0"
-              desc="Go outside for a walk"
+              phone={this.state.food2.display_phone}
+              rating={this.state.food2.rating}
             />
           </li>
           <li id="item5">
             <TomorrowInput
               activity={this.state.activity3.name}
-              distance="0"
-              desc="Go mules three!"
+              phone={this.state.activity3.display_phone}
+              rating={this.state.activity3.rating}
             />
           </li>
           <li id="item6">
             <TomorrowInput
               activity={this.state.food3.name}
-              distance="-1"
-              desc="Don't be a loser"
+              phone={this.state.food3.display_phone}
+              rating={this.state.food3.rating}
             />
           </li>
         </ul>
@@ -123,7 +118,6 @@ class TomorrowUser extends React.Component {
 
 TomorrowUser.propTypes = {
   plan: PropTypes.object.isRequired,
-  getPlans: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

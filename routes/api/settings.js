@@ -62,7 +62,7 @@ router.get("/food", (req, res) => {
   let position = Math.floor((Math.random() * 20));
   axios
     .get(
-      foodSearch + "location=kansascity" + "&&radius=" + radius + "&&cost=1,2",
+      foodSearch + "location=kansascity" + "&&radius=" + radius + "&&cost=1,2,3",
       { headers: { Authorization: "Bearer " + apiKey } }
     )
     .then(result => {
@@ -75,6 +75,63 @@ router.get("/food", (req, res) => {
 // @desc Return current user
 // @access Private
 router.get("/activity", (req, res) => {
+  let position = Math.floor((Math.random() * 7));
+  console.log(1);
+  axios
+    .get(
+      foodSearch +
+        "location=kansascity" +
+        "&&radius=" +
+        radius +
+        "&&cost=1,2,3" +
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks,art",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data.businesses[position]);
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/activity2", (req, res) => {
+  let position = Math.floor((Math.random() * 20));
+  console.log(1);
+  axios
+    .get(
+      foodSearch +
+        "location=kansascity" +
+        "&&radius=" +
+        radius +
+        "&&cost=1,2,3" +
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks,art",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data.businesses[1]);
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/activity3", (req, res) => {
+  let position = Math.floor((Math.random() * 20));
+  console.log(1);
+  axios
+    .get(
+      foodSearch +
+        "location=kansascity" +
+        "&&radius=" +
+        radius +
+        "&&cost=1,2,3" +
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks,art",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data.businesses[2]);
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/food/now", (req, res) => {
   let position = Math.floor((Math.random() * 5));
   axios
     .get(
@@ -82,8 +139,25 @@ router.get("/activity", (req, res) => {
         "location=kansascity" +
         "&&radius=" +
         radius +
-        "&&cost=1,2" +
-        "&&categories=active,experiences,hiking,rock_climbing,waterparks,art,nightlife",
+        "&&cost=1,2,3&&open_now=true",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data.businesses[position]);
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/activity/now", (req, res) => {
+  let position = Math.floor((Math.random() * 3));
+  axios
+    .get(
+      foodSearch +
+        "location=kansascity" +
+        "&&radius=" +
+        radius +
+        "&&cost=1,2,3&&open_now=true" +
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks,art",
       { headers: { Authorization: "Bearer " + apiKey } }
     )
     .then(result => {

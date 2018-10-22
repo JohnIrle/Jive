@@ -10,14 +10,9 @@ class HomeUser extends React.Component {
             <h1>Make a Plan?</h1>
           </div>
           <div className="option">
-            <div className="option-1">
-              <Link to="/plannow">
-                Bored?
-              </Link>
-            </div>
             <div className="option-2">
               <Link to="/plannow">
-                Hungry?
+                Plan now
               </Link>
             </div>
             <div className="option-3">

@@ -18,9 +18,9 @@ class TomorrowInput extends React.Component {
           <div className="inner">
             <div className="inner-data">
               <span className="inner-data-topspan">{this.props.activity}</span>
-              <p><em>Distance:</em> {this.props.distance} Miles</p><p><em>Description:</em> {this.props.desc}</p>
+              <p><em>Phone:</em> {this.props.phone}</p><p><em>Rating:</em> {this.props.rating}</p>
             </div>
-            <div className="inner-refresh">
+            <div className="inner-refresh" onClick={this.props.handleRefresh}>
               <FontAwesomeIcon className="float" icon={faArrowCircleRight} />
             </div>
           </div>
