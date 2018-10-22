@@ -45,3 +45,5 @@ HTML, CSS, JS,
 
 
 
+![Mules Team 3](https://github.com/Fed-code-a-thon-team-3/Jive/blob/master/Team3.jpg)
+
