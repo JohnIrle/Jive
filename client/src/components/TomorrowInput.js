@@ -13,7 +13,7 @@ class TomorrowInput extends React.Component {
   }
 
   render(props) {
-    if(this.state.loading == false) {
+    if(this.state.loading === false) {
         return (
           <div className="inner">
             <div className="inner-data">
