@@ -59,13 +59,14 @@ router.get("/current", (req, res) => {
 // @desc Return current user
 // @access Private
 router.get("/food", (req, res) => {
+  let position = Math.floor((Math.random() * 20));
   axios
     .get(
       foodSearch + "location=kansascity" + "&&radius=" + radius + "&&cost=1,2",
       { headers: { Authorization: "Bearer " + apiKey } }
     )
     .then(result => {
-      res.json(result.data);
+      res.json(result.data.businesses[position]);
     })
     .catch(err => res.json(err));
 });
@@ -74,6 +75,7 @@ router.get("/food", (req, res) => {
 // @desc Return current user
 // @access Private
 router.get("/activity", (req, res) => {
+  let position = Math.floor((Math.random() * 5));
   axios
     .get(
       foodSearch +
@@ -81,11 +83,11 @@ router.get("/activity", (req, res) => {
         "&&radius=" +
         radius +
         "&&cost=1,2" +
-        "&&categories=active,experiences,hiking,rock_climbing,waterparks",
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks,art,nightlife",
       { headers: { Authorization: "Bearer " + apiKey } }
     )
     .then(result => {
-      res.json(result.data);
+      res.json(result.data.businesses[position]);
     })
     .catch(err => console.log(err));
 });

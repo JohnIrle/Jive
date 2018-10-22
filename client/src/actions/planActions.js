@@ -20,7 +20,7 @@ export const getFoodPlans = () => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_FOOD_PLANS,
-        payload: null
+        payload: err
       })
     );
 };
