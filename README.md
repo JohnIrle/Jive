@@ -1,10 +1,11 @@
 # Jive
+Jive is a web application that selects activities and restaurants, at random, to present our users with exciting plans at the press of a button. Tailored to require minimal input from the user, the Jive experience provides a plan for the whole day, or right that instant! We provide our users with a streamlined experience by minimizing the setup process required to start using the application. After the initial setup process the application stores user information to give great suggestions again and again. By utilizing pre-existing technology, Jive is a powerful tool to add spontaneity and fun back into the lives of our users. 
 
-Jive is a web application that generates activites and ideas for you to do in your spare time so that you have to do as little thinking as possible. Tailored to the user's preferences, a user can choose to do something right at that instant, or plan for a whole day! After answering a few initial preference questions, the application stores the information to give great suggestions. Also, Jive uses a lot of pre-existing technology to add to the user's expierence.
+## YouTube 
+* [YouTube](https://www.youtube.com/watch?v=u-IDopU124A)
 
 ## Getting Started
-
-Jive is a web application so you can simply goes to the website and register. 
+In order to provide a frictionless experience, Jive was created as a web application capable of running on many platforms.  At the landing page, registration or login will be required. User preferences can be accessed via the gear icon to the bottom left. These changes will be used and reflected on the server. Follow the onscreen prompts for plan now to generate a single event and restaurant suggestion, or use the plan tomorrow button to generate suggestions to fill the entire day.   
 
 ### Languages
 HTML, CSS, JS, 
@@ -33,6 +34,14 @@ HTML, CSS, JS,
 
 * Federal Reserve Bank of Kansas City
 * University of Central Missouri Computer Science Dept.
+
+### Particular thanks to the following Professors for the tremendous support:
+
+* Professor Belinda Copus
+* Professor Hyungbae Park
+* Professor Yui Man Lui
+* Professor Jason James
+* Professor Taeghyun Kang
 
 
 
