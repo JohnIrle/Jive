@@ -5,7 +5,7 @@ Jive is a web application that selects activities and restaurants, at random, to
 * [YouTube](https://www.youtube.com/watch?v=u-IDopU124A)
 
 ## Getting Started
-In order to provide a frictionless experience, Jive was created as a web application capable of running on many platforms.  At the landing page, registration or login will be required. User preferences can be accessed via the gear icon to the bottom left. These changes will be used and reflected on the server. Follow the onscreen prompts for plan now to generate a single event and restaurant suggestion, or use the plan tomorrow button to generate suggestions to fill the entire day.   
+In order to provide a frictionless experience, Jive was created as a web application capable of running on many platforms.  At the landing page, registration or login will be required. Follow the onscreen prompts for plan now to generate a single event and restaurant suggestion, or use the plan tomorrow button to generate suggestions to fill the entire day.   
 
 ### Languages
 HTML, CSS, JS, 
