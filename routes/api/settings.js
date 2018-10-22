@@ -56,24 +56,26 @@ router.get("/current", (req, res) => {
 });
 
 // @route GET api/settings/food
-// @desc Return current user
-// @access Private
+// @desc Return food
+// @access Public
 router.get("/food", (req, res) => {
+  let position = Math.floor((Math.random() * 15));
   axios
     .get(
       foodSearch + "location=kansascity" + "&&radius=" + radius + "&&cost=1,2",
       { headers: { Authorization: "Bearer " + apiKey } }
     )
     .then(result => {
-      res.json(result.data);
+      res.json(result.data.business[position]);
     })
     .catch(err => res.json(err));
 });
 
 // @route GET api/settings/activity
-// @desc Return current user
-// @access Private
+// @desc Return activity
+// @access Public
 router.get("/activity", (req, res) => {
+  let position = Math.floor((Math.random() * 15));
   axios
     .get(
       foodSearch +
@@ -81,13 +83,55 @@ router.get("/activity", (req, res) => {
         "&&radius=" +
         radius +
         "&&cost=1,2" +
-        "&&categories=active,experiences,hiking,rock_climbing,waterparks",
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks,nightlife",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data.business[position]);
+    })
+    .catch(err => console.log(err));
+});
+
+// @route GET api/settings/activity/now
+// @desc Return activity open now
+// @access Public
+router.get("/activity/now", (req, res) => {
+  axios
+    .get(
+      foodSearch +
+        "location=kansascity" +
+        "&&radius=" + radius +
+        "&&open_now=true"+
+        "&&cost=1,2" +
+        "&&categories=active,experiences,hiking,rock_climbing,waterparks,nightlife",
       { headers: { Authorization: "Bearer " + apiKey } }
     )
     .then(result => {
       res.json(result.data);
     })
     .catch(err => console.log(err));
-});
+})
+
+
+// @route GET api/settings/food/now
+// @desc Return food open now
+// @access Public
+
+router.get("/food/now" (req, res) => {
+  axios
+    .get(
+      foodSearch +
+        "location=kansascity" +
+        "&&radius=" + radius +
+        "&&open_now=true"+
+        "&&cost=1,2",
+      { headers: { Authorization: "Bearer " + apiKey } }
+    )
+    .then(result => {
+      res.json(result.data);
+    })
+    .catch(err => console.log(err));
+})
+
 
 module.exports = router;
