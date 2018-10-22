@@ -59,7 +59,7 @@ router.get("/current", (req, res) => {
 // @desc Return food
 // @access Public
 router.get("/food", (req, res) => {
-  let position = Math.floor((Math.random() * 15));
+  let position = Math.floor(Math.random() * 15);
   axios
     .get(
       foodSearch + "location=kansascity" + "&&radius=" + radius + "&&cost=1,2",
@@ -75,7 +75,7 @@ router.get("/food", (req, res) => {
 // @desc Return activity
 // @access Public
 router.get("/activity", (req, res) => {
-  let position = Math.floor((Math.random() * 15));
+  let position = Math.floor(Math.random() * 15);
   axios
     .get(
       foodSearch +
@@ -100,8 +100,9 @@ router.get("/activity/now", (req, res) => {
     .get(
       foodSearch +
         "location=kansascity" +
-        "&&radius=" + radius +
-        "&&open_now=true"+
+        "&&radius=" +
+        radius +
+        "&&open_now=true" +
         "&&cost=1,2" +
         "&&categories=active,experiences,hiking,rock_climbing,waterparks,nightlife",
       { headers: { Authorization: "Bearer " + apiKey } }
@@ -110,20 +111,20 @@ router.get("/activity/now", (req, res) => {
       res.json(result.data);
     })
     .catch(err => console.log(err));
-})
-
+});
 
 // @route GET api/settings/food/now
 // @desc Return food open now
 // @access Public
 
-router.get("/food/now" (req, res) => {
+router.get("/food/now", (req, res) => {
   axios
     .get(
       foodSearch +
         "location=kansascity" +
-        "&&radius=" + radius +
-        "&&open_now=true"+
+        "&&radius=" +
+        radius +
+        "&&open_now=true" +
         "&&cost=1,2",
       { headers: { Authorization: "Bearer " + apiKey } }
     )
@@ -131,7 +132,6 @@ router.get("/food/now" (req, res) => {
       res.json(result.data);
     })
     .catch(err => console.log(err));
-})
-
+});
 
 module.exports = router;
