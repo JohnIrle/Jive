@@ -1,11 +1,8 @@
-import React from "react";
-import AboutUser from "../components/AboutUser";
+import React from 'react';
+import AboutUser from '../components/AboutUser';
 
-class Home extends React.Component {
-
-  render() {
-    return <AboutUser />;
-  }
-}
+const Home = () => {
+  return <AboutUser />;
+};
 
 export default Home;

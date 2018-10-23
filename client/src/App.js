@@ -1,22 +1,21 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./actions/authActions";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
+import setAuthToken from './utils/setAuthToken';
+import { setCurrentUser, logoutUser } from './actions/authActions';
 
-import { Provider } from "react-redux";
-import store from "./store";
+import { Provider } from 'react-redux';
+import store from './store';
 
-import "./App.css";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Landing from "./pages/Landing";
-import PlanTomorrow from "./pages/PlanTomorrow";
-import PlanNow from "./pages/PlanNow";
-import About from "./pages/About";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Landing from './pages/Landing';
+import PlanTomorrow from './pages/PlanTomorrow';
+import PlanNow from './pages/PlanNow';
+import About from './pages/About';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 // Check for token
 
@@ -34,7 +33,7 @@ if (localStorage.jwtToken) {
     // Logout user
     store.dispatch(logoutUser());
     // Redirect to login
-    window.location.href = "/login";
+    window.location.href = '/login';
   }
 }
 

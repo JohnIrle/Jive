@@ -1,13 +1,12 @@
-import React from "react";
-import TomorrowUser from "../components/TomorrowUser";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import TomorrowUser from '../components/TomorrowUser';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class PlanTomorrow extends React.Component {
-
   componentDidUpdate() {
     if (!this.props.auth.isAuthenticated) {
-      this.props.history.push("/login");
+      this.props.history.push('/login');
     }
   }
 

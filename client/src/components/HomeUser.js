@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class HomeUser extends React.Component {
   render() {
@@ -11,14 +11,10 @@ class HomeUser extends React.Component {
           </div>
           <div className="option">
             <div className="option-2">
-              <Link to="/plannow">
-                Plan now
-              </Link>
+              <Link to="/plannow">Plan now</Link>
             </div>
             <div className="option-3">
-              <Link to="/plantomorrow">
-                Plan tomorrow
-              </Link>
+              <Link to="/plantomorrow">Plan tomorrow</Link>
             </div>
           </div>
         </div>

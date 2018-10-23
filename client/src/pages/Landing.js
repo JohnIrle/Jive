@@ -1,12 +1,12 @@
-import React from "react";
-import LandingUser from "../components/LandingUser";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import LandingUser from '../components/LandingUser';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class Landing extends React.Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/home");
+      this.props.history.push('/home');
     }
   }
 

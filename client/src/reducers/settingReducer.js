@@ -1,4 +1,4 @@
-import { GET_SETTINGS, SETTINGS_LOADING } from "../actions/types";
+import { GET_SETTINGS, SETTINGS_LOADING } from '../actions/types';
 
 const initialState = {
   setting: null,

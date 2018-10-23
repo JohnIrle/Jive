@@ -1,7 +1,7 @@
-import React from "react";
-import { CometSpinLoader } from "react-css-loaders";
-import TomorrowInput from "./TomorrowInput";
-import axios from "axios";
+import React from 'react';
+import { CometSpinLoader } from 'react-css-loaders';
+import TomorrowInput from './TomorrowInput';
+import axios from 'axios';
 
 class NowUser extends React.Component {
   constructor(props) {
@@ -15,12 +15,8 @@ class NowUser extends React.Component {
   }
 
   componentWillMount() {
-    axios
-      .get("/api/settings/food/now")
-      .then(res => this.setState({ food: res.data }));
-    axios
-      .get("/api/settings/activity/now")
-      .then(res => this.setState({ activity: res.data }));
+    axios.get('/api/data/food/now').then(res => this.setState({ food: res.data }));
+    axios.get('/api/data/activity/now').then(res => this.setState({ activity: res.data }));
   }
 
   render() {

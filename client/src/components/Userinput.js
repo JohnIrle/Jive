@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { registerUser } from "../actions/authActions";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { registerUser } from '../actions/authActions';
 
 class UserInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      password: "",
-      password2: "",
+      name: '',
+      email: '',
+      password: '',
+      password2: '',
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
@@ -20,7 +20,7 @@ class UserInput extends React.Component {
 
   omponentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/home");
+      this.props.history.push('/home');
     }
   }
 
@@ -54,33 +54,13 @@ class UserInput extends React.Component {
       <div>
         <form id="simple-form" onSubmit={this.onSubmit}>
           <label htmlFor="name-field">Name:</label>
-          <input
-            type="name"
-            name="name"
-            id="name-field"
-            onChange={this.onChange}
-          />
+          <input type="name" name="name" id="name-field" onChange={this.onChange} />
           <label htmlFor="email-field">Email:</label>
-          <input
-            type="email"
-            name="email"
-            id="email-field"
-            onChange={this.onChange}
-          />
+          <input type="email" name="email" id="email-field" onChange={this.onChange} />
           <label htmlFor="password-field">Password:</label>
-          <input
-            type="password"
-            name="password"
-            id="password-field"
-            onChange={this.onChange}
-          />
+          <input type="password" name="password" id="password-field" onChange={this.onChange} />
           <label htmlFor="password2-field">Confirm:</label>
-          <input
-            type="password"
-            name="password2"
-            id="confirm-field"
-            onChange={this.onChange}
-          />
+          <input type="password" name="password2" id="confirm-field" onChange={this.onChange} />
           <button className="btn btn-form" type="submit">
             Submit
           </button>

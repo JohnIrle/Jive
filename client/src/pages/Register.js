@@ -1,10 +1,8 @@
-import React from "react";
-import RegisterUser from "../components/RegisterUser";
+import React from 'react';
+import RegisterUser from '../components/RegisterUser';
 
-class Register extends React.Component {
-  render() {
-    return <RegisterUser />;
-  }
-}
+const Register = () => {
+  return <RegisterUser />;
+};
 
 export default Register;

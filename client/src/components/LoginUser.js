@@ -1,5 +1,5 @@
-import React from "react";
-import LoginInput from "./LoginInput";
+import React from 'react';
+import LoginInput from './LoginInput';
 
 class LoginUser extends React.Component {
   render() {

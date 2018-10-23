@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const { Schema } = require('mongoose');
 
 // Create Schema
 const SettingSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: "users"
+    ref: 'users'
   },
   cost: {
     type: String,
@@ -21,4 +21,5 @@ const SettingSchema = new Schema({
   }
 });
 
-module.exports = Setting = mongoose.model("setting", SettingSchema);
+const Setting = mongoose.model('setting', SettingSchema);
+module.exports = Setting;

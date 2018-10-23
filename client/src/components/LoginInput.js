@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { loginUser } from "../actions/authActions";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { loginUser } from '../actions/authActions';
 
 class LoginInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -23,7 +23,7 @@ class LoginInput extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/home");
+      this.props.history.push('/home');
     }
 
     if (nextProps.errors) {
@@ -53,12 +53,7 @@ class LoginInput extends React.Component {
       <div className="login-form">
         <form id="simple-form" onSubmit={this.onSubmit}>
           <label htmlFor="login-email-field">Email:</label>
-          <input
-            type="email"
-            name="email"
-            id="login-email-field"
-            onChange={this.onChange}
-          />
+          <input type="email" name="email" id="login-email-field" onChange={this.onChange} />
           <label htmlFor="login-password-field">Password:</label>
           <input
             type="password"

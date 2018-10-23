@@ -1,18 +1,18 @@
-import React from "react";
-import HomeUser from "../components/HomeUser";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import HomeUser from '../components/HomeUser';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class Home extends React.Component {
   componentDidMount() {
     if (!this.props.auth.isAuthenticated) {
-      this.props.history.push("/login");
+      this.props.history.push('/login');
     }
   }
 
   componentDidUpdate() {
     if (!this.props.auth.isAuthenticated) {
-      this.props.history.push("/login");
+      this.props.history.push('/login');
     }
   }
 

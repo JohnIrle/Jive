@@ -1,17 +1,17 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getCurrentSettings } from "../actions/settingActions";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getCurrentSettings } from '../actions/settingActions';
 
 class Settings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cost: "",
-      location: "",
+      cost: '',
+      location: '',
       click: false
     };
 
@@ -54,36 +54,16 @@ class Settings extends React.Component {
               <form className="panel-group" onSubmit={this.onSubmit}>
                 <label htmlFor="cost-field">Cost:</label>
                 <div className="button-group">
-                  <input
-                    type="radio"
-                    name="cost"
-                    value="1"
-                    onChange={this.onChange}
-                  />
+                  <input type="radio" name="cost" value="1" onChange={this.onChange} />
                   <label>$</label>
                   <br />
-                  <input
-                    type="radio"
-                    name="cost"
-                    value="1,2"
-                    onChange={this.onChange}
-                  />
+                  <input type="radio" name="cost" value="1,2" onChange={this.onChange} />
                   <label>$$</label>
                   <br />
-                  <input
-                    type="radio"
-                    name="cost"
-                    value="1,2,3"
-                    onChange={this.onChange}
-                  />
+                  <input type="radio" name="cost" value="1,2,3" onChange={this.onChange} />
                   <label>$$$</label>
                   <br />
-                  <input
-                    type="radio"
-                    name="cost"
-                    value="1,2,3,4"
-                    onChange={this.onChange}
-                  />
+                  <input type="radio" name="cost" value="1,2,3,4" onChange={this.onChange} />
                   <label>$$$$</label>
                 </div>
                 <label htmlFor="location-field">Location:</label>

@@ -1,12 +1,12 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 
-import { CometSpinLoader } from "react-css-loaders";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getFoodPlans, getActivityPlans } from "../actions/planActions";
+import { CometSpinLoader } from 'react-css-loaders';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getFoodPlans, getActivityPlans } from '../actions/planActions';
 
-import TomorrowInput from "./TomorrowInput";
+import TomorrowInput from './TomorrowInput';
 
 class TomorrowUser extends React.Component {
   constructor(props) {
@@ -15,8 +15,8 @@ class TomorrowUser extends React.Component {
     this.state = {
       load: false,
       settings: {
-        cost: "1,2",
-        location: "kansas city"
+        cost: '1,2',
+        location: 'kansas city'
       },
       activity1: {},
       food1: {},
@@ -30,29 +30,17 @@ class TomorrowUser extends React.Component {
   }
 
   componentWillMount() {
-    axios
-      .get("/api/settings/activity")
-      .then(res => this.setState({ activity1: res.data }));
+    axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
 
-    axios
-      .get("/api/settings/food")
-      .then(res => this.setState({ food1: res.data }));
+    axios.get('/api/data/food').then(res => this.setState({ food1: res.data }));
 
-    axios
-      .get("/api/settings/activity")
-      .then(res => this.setState({ activity2: res.data }));
+    axios.get('/api/data/activity').then(res => this.setState({ activity2: res.data }));
 
-    axios
-      .get("/api/settings/food")
-      .then(res => this.setState({ food2: res.data }));
+    axios.get('/api/data/food').then(res => this.setState({ food2: res.data }));
 
-    axios
-      .get("/api/settings/activity")
-      .then(res => this.setState({ activity3: res.data }));
+    axios.get('/api/data/activity').then(res => this.setState({ activity3: res.data }));
 
-    axios
-      .get("/api/settings/food")
-      .then(res => this.setState({ food3: res.data }));
+    axios.get('/api/data/food').then(res => this.setState({ food3: res.data }));
   }
 
   handleRefresh(e) {
@@ -61,7 +49,6 @@ class TomorrowUser extends React.Component {
   }
 
   render() {
-    
     console.log(this.state.activity2);
     return (
       <div className="tomorrowform">
@@ -117,7 +104,7 @@ class TomorrowUser extends React.Component {
 }
 
 TomorrowUser.propTypes = {
-  plan: PropTypes.object.isRequired,
+  plan: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

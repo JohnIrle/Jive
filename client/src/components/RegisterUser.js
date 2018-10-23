@@ -1,5 +1,5 @@
-import React from "react";
-import UserInput from "./Userinput";
+import React from 'react';
+import UserInput from './Userinput';
 
 class RegisterUser extends React.Component {
   render() {
