@@ -4,9 +4,9 @@ import axios from 'axios';
 import { CometSpinLoader } from 'react-css-loaders';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getFoodPlans, getActivityPlans } from '../actions/planActions';
+import { getFoodPlans, getActivityPlans } from '../../actions/planActions';
 
-import ResultBox from './ResultBox';
+import ResultBox from '../Resultbox/ResultBox';
 
 class TomorrowResults extends React.Component {
   constructor(props) {

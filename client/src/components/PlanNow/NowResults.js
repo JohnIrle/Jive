@@ -1,6 +1,6 @@
 import React from 'react';
 import { CometSpinLoader } from 'react-css-loaders';
-import ResultBox from './ResultBox';
+import ResultBox from '../Resultbox/ResultBox';
 import axios from 'axios';
 
 class NowResults extends React.Component {

@@ -8,7 +8,7 @@ import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { logoutUser } from '../actions/authActions';
+import { logoutUser } from '../../actions/authActions';
 
 class NavBar extends React.Component {
   onLogoutClick(e) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import TomorrowResults from '../components/TomorrowResults';
+import TomorrowResults from './TomorrowResults';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 

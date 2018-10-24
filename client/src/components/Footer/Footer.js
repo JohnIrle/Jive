@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
-import Settings from './Settings';
+import Settings from './Settings/Settings';
 import { Link } from 'react-router-dom';
 
 class Footer extends React.Component {

@@ -4,7 +4,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrentSettings } from '../actions/settingActions';
+import { getCurrentSettings } from '../../../actions/settingActions';
 
 class Settings extends React.Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import NowResults from '../components/NowResults';
+import NowResults from './NowResults';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 

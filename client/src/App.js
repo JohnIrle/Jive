@@ -7,15 +7,15 @@ import { setCurrentUser, logoutUser } from './actions/authActions';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import Register from './pages/Register';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Landing from './pages/Landing';
-import PlanTomorrow from './pages/PlanTomorrow';
-import PlanNow from './pages/PlanNow';
-import About from './pages/About';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import Landing from './components/Landing/Landing';
+import PlanTomorrow from './components/PlanTomorrow/PlanTomorrow';
+import PlanNow from './components/PlanNow/PlanNow';
+import About from './components/About/About';
+import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 
 // Check for token
 
