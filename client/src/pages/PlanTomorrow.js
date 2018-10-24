@@ -1,5 +1,5 @@
 import React from 'react';
-import TomorrowUser from '../components/TomorrowUser';
+import TomorrowResults from '../components/TomorrowResults';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ class PlanTomorrow extends React.Component {
   }
 
   render() {
-    return <TomorrowUser />;
+    return <TomorrowResults />;
   }
 }
 

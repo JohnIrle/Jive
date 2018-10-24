@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getFoodPlans, getActivityPlans } from '../actions/planActions';
 
-import TomorrowInput from './TomorrowInput';
+import ResultBox from './ResultBox';
 
-class TomorrowUser extends React.Component {
+class TomorrowResults extends React.Component {
   constructor(props) {
     super(props);
 
@@ -55,7 +55,7 @@ class TomorrowUser extends React.Component {
         <h2>Tomorrows Plan:</h2>
         <ul className="tomorrowform-data">
           <li id="item1">
-            <TomorrowInput
+            <ResultBox
               handleRefresh={this.handleRefresh}
               activity={this.state.activity1.name}
               phone={this.state.activity1.display_phone}
@@ -63,35 +63,35 @@ class TomorrowUser extends React.Component {
             />
           </li>
           <li id="item2">
-            <TomorrowInput
+            <ResultBox
               activity={this.state.food1.name}
               phone={this.state.food1.display_phone}
               rating={this.state.food1.rating}
             />
           </li>
           <li id="item3">
-            <TomorrowInput
+            <ResultBox
               activity={this.state.activity2.name}
               phone={this.state.activity2.display_phone}
               rating={this.state.activity2.rating}
             />
           </li>
           <li id="item4">
-            <TomorrowInput
+            <ResultBox
               activity={this.state.food2.name}
               phone={this.state.food2.display_phone}
               rating={this.state.food2.rating}
             />
           </li>
           <li id="item5">
-            <TomorrowInput
+            <ResultBox
               activity={this.state.activity3.name}
               phone={this.state.activity3.display_phone}
               rating={this.state.activity3.rating}
             />
           </li>
           <li id="item6">
-            <TomorrowInput
+            <ResultBox
               activity={this.state.food3.name}
               phone={this.state.food3.display_phone}
               rating={this.state.food3.rating}
@@ -103,7 +103,7 @@ class TomorrowUser extends React.Component {
   }
 }
 
-TomorrowUser.propTypes = {
+TomorrowResults.propTypes = {
   plan: PropTypes.object.isRequired
 };
 
@@ -114,4 +114,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getFoodPlans, getActivityPlans }
-)(TomorrowUser);
+)(TomorrowResults);

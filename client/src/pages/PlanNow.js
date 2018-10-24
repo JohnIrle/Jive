@@ -1,5 +1,5 @@
 import React from 'react';
-import NowUser from '../components/NowUser.js';
+import NowResults from '../components/NowResults';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ class PlanNow extends React.Component {
   }
 
   render() {
-    return <NowUser />;
+    return <NowResults />;
   }
 }
 

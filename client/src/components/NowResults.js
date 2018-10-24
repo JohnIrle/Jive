@@ -1,9 +1,9 @@
 import React from 'react';
 import { CometSpinLoader } from 'react-css-loaders';
-import TomorrowInput from './TomorrowInput';
+import ResultBox from './ResultBox';
 import axios from 'axios';
 
-class NowUser extends React.Component {
+class NowResults extends React.Component {
   constructor(props) {
     super(props);
 
@@ -25,14 +25,14 @@ class NowUser extends React.Component {
         <h2>Todays Plan:</h2>
         <ul className="nowform-data">
           <li id="itemx">
-            <TomorrowInput
+            <ResultBox
               activity={this.state.food.name}
               distance={this.state.food.name}
               rating={this.state.food.rating}
             />
           </li>
           <li id="itemy">
-            <TomorrowInput
+            <ResultBox
               activity={this.state.activity.name}
               distance={this.state.activity.name}
               rating={this.state.activity.rating}
@@ -44,4 +44,4 @@ class NowUser extends React.Component {
   }
 }
 
-export default NowUser;
+export default NowResults;
