@@ -1,5 +1,4 @@
 import React from 'react';
-import LandingUser from '../components/LandingUser';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -11,7 +10,13 @@ class Landing extends React.Component {
   }
 
   render() {
-    return <LandingUser />;
+    return (
+      <div className="landing">
+        <div className="landing-header">
+          <img className="landing-header-img" src={require('../assets/jive.png')} alt="Jive Logo" />
+        </div>
+      </div>
+    );
   }
 }
 
