@@ -35,14 +35,14 @@ class PlanNow extends React.Component {
           <li id="itemx">
             <ResultBox
               activity={this.state.food.name}
-              distance={this.state.food.name}
+              phone={this.state.food.display_phone}
               rating={this.state.food.rating}
             />
           </li>
           <li id="itemy">
             <ResultBox
               activity={this.state.activity.name}
-              distance={this.state.activity.name}
+              phone={this.state.activity.display_phone}
               rating={this.state.activity.rating}
             />
           </li>
