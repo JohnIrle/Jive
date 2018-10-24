@@ -30,6 +30,7 @@ class TomorrowResults extends React.Component {
   }
 
   componentWillMount() {
+    getFoodPlans();
     axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
 
     axios.get('/api/data/food').then(res => this.setState({ food1: res.data }));
