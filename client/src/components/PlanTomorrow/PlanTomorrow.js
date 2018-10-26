@@ -27,8 +27,8 @@ class PlanTomorrow extends React.Component {
     this.handleRefresh = this.handleRefresh.bind(this);
   }
 
-  componentWillMount() {
-    getFoodPlans();
+  componentDidMount() {
+    this.props.getFoodPlans();
     axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
 
     axios.get('/api/data/food').then(res => this.setState({ food1: res.data }));
@@ -49,8 +49,7 @@ class PlanTomorrow extends React.Component {
   }
 
   handleRefresh(e) {
-    console.log(e.target);
-    // axios.get("/api/setting/food").then(this.setState({[e.target]: res.data}));
+    axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
   }
 
   render() {
@@ -61,7 +60,7 @@ class PlanTomorrow extends React.Component {
           <li id="item1">
             <ResultBox
               handleRefresh={this.handleRefresh}
-              activity={this.state.activity1.name}
+              activity={this.props.food.name}
               phone={this.state.activity1.display_phone}
               rating={this.state.activity1.rating}
             />
@@ -114,7 +113,8 @@ PlanTomorrow.propTypes = {
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  plan: state.plan
+  plan: state.plan,
+  food: state.plan.food
 });
 
 export default connect(

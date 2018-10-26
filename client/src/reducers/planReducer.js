@@ -1,7 +1,7 @@
 import { GET_FOOD_PLANS, GET_ACTIVITY_PLANS, PLAN_LOADING } from '../actions/types';
 
 const initalState = {
-  food: {},
+  food: [],
   activities: {},
   triggered: false,
   loading: false

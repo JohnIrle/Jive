@@ -18,7 +18,7 @@ router.get('/food', (req, res) => {
       headers: { Authorization: `Bearer ${apiKey}` }
     })
     .then(result => {
-      res.json(result.data.businesses[position]);
+      res.json(result.data.businesses);
     })
     .catch(err => console.log(err));
 });

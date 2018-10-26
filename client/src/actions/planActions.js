@@ -5,7 +5,7 @@ import { GET_FOOD_PLANS, PLAN_LOADING, GET_ERRORS, GET_ACTIVITY_PLANS } from './
 export const getFoodPlans = () => dispatch => {
   dispatch(setPlanLoading());
   axios
-    .get('/api/settings/food')
+    .get('/api/data/food')
     .then(res =>
       dispatch({
         type: GET_FOOD_PLANS,
@@ -23,7 +23,7 @@ export const getFoodPlans = () => dispatch => {
 export const getActivityPlans = () => dispatch => {
   dispatch(setPlanLoading());
   axios
-    .get('/api/settings/activity')
+    .get('/api/data/activity')
     .then(res => dispatch({ type: GET_ACTIVITY_PLANS, payload: res.data }));
 };
 
