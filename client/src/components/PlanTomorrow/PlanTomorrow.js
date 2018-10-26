@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import ResultBox from '../Resultbox/ResultBox';
+import { timingSafeEqual } from 'crypto';
 
 class PlanTomorrow extends React.Component {
   constructor(props) {
@@ -27,7 +28,11 @@ class PlanTomorrow extends React.Component {
     this.handleRefresh = this.handleRefresh.bind(this);
   }
 
+<<<<<<< HEAD
   componentDidMount() {
+=======
+  componentWillMount() {
+>>>>>>> Still not working when sending an array of objects vs one object.
     this.props.getFoodPlans();
     axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
 
@@ -53,6 +58,12 @@ class PlanTomorrow extends React.Component {
   }
 
   render() {
+    const isFoodExists = !this.props.food || !this.props.food.length;
+
+    if (this.props.loading || !isFoodExists) {
+      return null;
+    }
+
     return (
       <div className="tomorrowform">
         <h2>Tomorrows Plan:</h2>
@@ -60,7 +71,7 @@ class PlanTomorrow extends React.Component {
           <li id="item1">
             <ResultBox
               handleRefresh={this.handleRefresh}
-              activity={this.props.food.name}
+              activity={this.props.food[0].name}
               phone={this.state.activity1.display_phone}
               rating={this.state.activity1.rating}
               isLoading={this.props.food.loading}
