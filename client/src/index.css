@@ -58,6 +58,9 @@
     margin: 1rem 0rem;
     transition: all 0.3s; }
 
+.dingus {
+  display: none; }
+
 .App {
   background-color: #FFF;
   height: 100vh;
