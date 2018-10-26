@@ -54,30 +54,32 @@ class PlanTomorrow extends React.Component {
   }
 
   render() {
-    const isFoodExists = !this.props.food || !this.props.food.length;
-
-    if (this.props.loading || !isFoodExists) {
-      return null;
+    const {plan: {loading, food: foodList}} = this.props;
+    const isFoodExist = foodList && foodList.length;
+    if (loading || !isFoodExist) {
+      return null; // loader
     }
 
     return (
       <div className="tomorrowform">
         <h2>Tomorrows Plan:</h2>
         <ul className="tomorrowform-data">
-          <li id="item1">
+          {foodList.map((food) => (
+            <li key={food.id}>
+              <ResultBox
+                activity={food.name}
+                phone={food.display_phone}
+                rating={food.rating}
+              />
+            </li>
+          ))}
+            <li id="item2">
             <ResultBox
               handleRefresh={this.handleRefresh}
               activity={this.props.food[0].name}
               phone={this.state.activity1.display_phone}
               rating={this.state.activity1.rating}
               isLoading={this.props.food.loading}
-            />
-          </li>
-          <li id="item2">
-            <ResultBox
-              activity={this.state.food1.name}
-              phone={this.state.food1.display_phone}
-              rating={this.state.food1.rating}
             />
           </li>
           <li id="item3">
@@ -87,25 +89,11 @@ class PlanTomorrow extends React.Component {
               rating={this.state.activity2.rating}
             />
           </li>
-          <li id="item4">
-            <ResultBox
-              activity={this.state.food2.name}
-              phone={this.state.food2.display_phone}
-              rating={this.state.food2.rating}
-            />
-          </li>
           <li id="item5">
             <ResultBox
               activity={this.state.activity3.name}
               phone={this.state.activity3.display_phone}
               rating={this.state.activity3.rating}
-            />
-          </li>
-          <li id="item6">
-            <ResultBox
-              activity={this.state.food3.name}
-              phone={this.state.food3.display_phone}
-              rating={this.state.food3.rating}
             />
           </li>
         </ul>
