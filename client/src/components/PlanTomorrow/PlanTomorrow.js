@@ -63,6 +63,7 @@ class PlanTomorrow extends React.Component {
               activity={this.props.food.name}
               phone={this.state.activity1.display_phone}
               rating={this.state.activity1.rating}
+              isLoading={this.props.food.loading}
             />
           </li>
           <li id="item2">

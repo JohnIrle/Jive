@@ -40,17 +40,8 @@
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;
-
-      &-1 {
-        background: #1F3CBF;
-        padding: 1rem 3rem;
-        border-radius: 3px;
-        a {
-          color: $white;
-          font-size: 1.5rem;
-        }
-      }
-      &-2 {
+      
+      &-now {
         background: #FE3F03;
         padding: 1rem 3rem;
         border-radius: 3px;
@@ -59,7 +50,7 @@
           font-size: 1.5rem;
         }
       }
-      &-3 {
+      &-tomorrow {
         background: #5C0065;
         padding: 1rem 3rem;
         border-radius: 3px;

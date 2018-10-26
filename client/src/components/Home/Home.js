@@ -24,10 +24,10 @@ class Home extends React.Component {
             <h1>Make a Plan?</h1>
           </div>
           <div className="option">
-            <div className="option-2">
+            <div className="option-now">
               <Link to="/plannow">Plan now</Link>
             </div>
-            <div className="option-3">
+            <div className="option-tomorrow">
               <Link to="/plantomorrow">Plan tomorrow</Link>
             </div>
           </div>
