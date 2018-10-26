@@ -54,48 +54,29 @@ class PlanTomorrow extends React.Component {
   }
 
   render() {
-    const {plan: {loading, food: foodList}} = this.props;
+    const {
+      plan: { loading, food: foodList }
+    } = this.props;
     const isFoodExist = foodList && foodList.length;
     if (loading || !isFoodExist) {
       return null; // loader
+    }
+
+    const truncFood = [];
+
+    for (let i = 0; i < 6; i++) {
+      truncFood.push(foodList[i]);
     }
 
     return (
       <div className="tomorrowform">
         <h2>Tomorrows Plan:</h2>
         <ul className="tomorrowform-data">
-          {foodList.map((food) => (
+          {truncFood.map(food => (
             <li key={food.id}>
-              <ResultBox
-                activity={food.name}
-                phone={food.display_phone}
-                rating={food.rating}
-              />
+              <ResultBox activity={food.name} phone={food.display_phone} rating={food.rating} />
             </li>
           ))}
-            <li id="item2">
-            <ResultBox
-              handleRefresh={this.handleRefresh}
-              activity={this.props.food[0].name}
-              phone={this.state.activity1.display_phone}
-              rating={this.state.activity1.rating}
-              isLoading={this.props.food.loading}
-            />
-          </li>
-          <li id="item3">
-            <ResultBox
-              activity={this.state.activity2.name}
-              phone={this.state.activity2.display_phone}
-              rating={this.state.activity2.rating}
-            />
-          </li>
-          <li id="item5">
-            <ResultBox
-              activity={this.state.activity3.name}
-              phone={this.state.activity3.display_phone}
-              rating={this.state.activity3.rating}
-            />
-          </li>
         </ul>
       </div>
     );
