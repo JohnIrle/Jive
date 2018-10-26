@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { CometSpinLoader } from 'react-css-loaders';
 import ResultBox from '../Resultbox/ResultBox';
-import axios from 'axios';
+import { getFoodPlans, getActivityPlans } from '../../actions/planActions';
 
 class PlanNow extends React.Component {
   constructor(props) {
@@ -17,8 +17,7 @@ class PlanNow extends React.Component {
   }
 
   componentWillMount() {
-    axios.get('/api/data/food/now').then(res => this.setState({ food: res.data }));
-    axios.get('/api/data/activity/now').then(res => this.setState({ activity: res.data }));
+    this.props.getFoodPlans();
   }
 
   componentDidUpdate() {
@@ -28,24 +27,29 @@ class PlanNow extends React.Component {
   }
 
   render() {
+    const {
+      plan: { loading, food: foodList }
+    } = this.props;
+    const isFoodExist = foodList && foodList.length;
+    if (loading || !isFoodExist) {
+      return null; // loader
+    }
+
+    const truncFood = [];
+
+    for (let i = 0; i < 2; i++) {
+      truncFood.push(foodList[i]);
+    }
+
     return (
       <div className="nowform">
         <h2>Todays Plan:</h2>
         <ul className="nowform-data">
-          <li id="itemx">
-            <ResultBox
-              activity={this.state.food.name}
-              phone={this.state.food.display_phone}
-              rating={this.state.food.rating}
-            />
-          </li>
-          <li id="itemy">
-            <ResultBox
-              activity={this.state.activity.name}
-              phone={this.state.activity.display_phone}
-              rating={this.state.activity.rating}
-            />
-          </li>
+          {truncFood.map(food => (
+            <li key={food.id}>
+              <ResultBox activity={food.name} phone={food.display_phone} rating={food.rating} />
+            </li>
+          ))}
         </ul>
       </div>
     );
@@ -57,7 +61,12 @@ PlanNow.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  plan: state.plan,
+  food: state.plan.food
 });
 
-export default connect(mapStateToProps)(PlanNow);
+export default connect(
+  mapStateToProps,
+  { getFoodPlans, getActivityPlans }
+)(PlanNow);
