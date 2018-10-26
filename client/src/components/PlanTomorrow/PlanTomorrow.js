@@ -28,11 +28,7 @@ class PlanTomorrow extends React.Component {
     this.handleRefresh = this.handleRefresh.bind(this);
   }
 
-<<<<<<< HEAD
   componentDidMount() {
-=======
-  componentWillMount() {
->>>>>>> Still not working when sending an array of objects vs one object.
     this.props.getFoodPlans();
     axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
 
