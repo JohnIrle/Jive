@@ -38,9 +38,7 @@ class PlanTomorrow extends React.Component {
     }
   }
 
-  handleRefresh(e) {
-    axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
-  }
+  handleRefresh(e) {}
 
   render() {
     const { loading, food } = this.props.plan;
@@ -57,7 +55,12 @@ class PlanTomorrow extends React.Component {
         <ul className="tomorrowform-data">
           {truncFood.map(food => (
             <li key={food.id}>
-              <ResultBox activity={food.name} phone={food.display_phone} rating={food.rating} />
+              <ResultBox
+                activity={food.name}
+                phone={food.display_phone}
+                rating={food.rating}
+                isLoading={loading}
+              />
             </li>
           ))}
         </ul>

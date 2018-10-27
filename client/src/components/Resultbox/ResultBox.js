@@ -7,7 +7,8 @@ import PropTypes from 'prop-types';
 
 class ResultBox extends React.Component {
   render(props) {
-    if (this.props.plan.loading === false) {
+    const { loading } = this.props.plan;
+    if (loading === false) {
       return (
         <div className="inner">
           <div className="inner-data">
