@@ -49,11 +49,7 @@ class PlanTomorrow extends React.Component {
       return null; // loader
     }
 
-    const truncFood = [];
-
-    for (let i = 0; i < 6; i++) {
-      truncFood.push(food[i]);
-    }
+    const truncFood = food.slice(0, 6);
 
     return (
       <div className="tomorrowform">

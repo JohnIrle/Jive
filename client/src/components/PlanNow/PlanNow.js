@@ -23,11 +23,7 @@ class PlanNow extends React.Component {
       return null; // loader
     }
 
-    const truncFood = [];
-
-    for (let i = 0; i < 2; i++) {
-      truncFood.push(food[i]);
-    }
+    const truncFood = food.slice(0, 2);
 
     return (
       <div className="nowform">
