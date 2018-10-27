@@ -30,17 +30,6 @@ class PlanTomorrow extends React.Component {
 
   componentDidMount() {
     this.props.getFoodPlans();
-    axios.get('/api/data/activity').then(res => this.setState({ activity1: res.data }));
-
-    axios.get('/api/data/food').then(res => this.setState({ food1: res.data }));
-
-    axios.get('/api/data/activity').then(res => this.setState({ activity2: res.data }));
-
-    axios.get('/api/data/food').then(res => this.setState({ food2: res.data }));
-
-    axios.get('/api/data/activity').then(res => this.setState({ activity3: res.data }));
-
-    axios.get('/api/data/food').then(res => this.setState({ food3: res.data }));
   }
 
   componentDidUpdate() {
@@ -54,10 +43,8 @@ class PlanTomorrow extends React.Component {
   }
 
   render() {
-    const {
-      plan: { loading, food: foodList }
-    } = this.props;
-    const isFoodExist = foodList && foodList.length;
+    const { loading, food } = this.props.plan;
+    const isFoodExist = food && food.length;
     if (loading || !isFoodExist) {
       return null; // loader
     }
@@ -65,7 +52,7 @@ class PlanTomorrow extends React.Component {
     const truncFood = [];
 
     for (let i = 0; i < 6; i++) {
-      truncFood.push(foodList[i]);
+      truncFood.push(food[i]);
     }
 
     return (
@@ -90,8 +77,7 @@ PlanTomorrow.propTypes = {
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  plan: state.plan,
-  food: state.plan.food
+  plan: state.plan
 });
 
 export default connect(

@@ -6,17 +6,7 @@ import ResultBox from '../Resultbox/ResultBox';
 import { getFoodPlans, getActivityPlans } from '../../actions/planActions';
 
 class PlanNow extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      load: false,
-      food: {},
-      activity: {}
-    };
-  }
-
-  componentWillMount() {
+  componentDidMount() {
     this.props.getFoodPlans();
   }
 
@@ -27,10 +17,8 @@ class PlanNow extends React.Component {
   }
 
   render() {
-    const {
-      plan: { loading, food: foodList }
-    } = this.props;
-    const isFoodExist = foodList && foodList.length;
+    const { loading, food } = this.props.plan;
+    const isFoodExist = food && food.length;
     if (loading || !isFoodExist) {
       return null; // loader
     }
@@ -38,7 +26,7 @@ class PlanNow extends React.Component {
     const truncFood = [];
 
     for (let i = 0; i < 2; i++) {
-      truncFood.push(foodList[i]);
+      truncFood.push(food[i]);
     }
 
     return (
@@ -62,8 +50,7 @@ PlanNow.propTypes = {
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  plan: state.plan,
-  food: state.plan.food
+  plan: state.plan
 });
 
 export default connect(
